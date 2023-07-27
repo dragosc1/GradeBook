@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
-    [Table("Sudent_grade")]
-    public class Student_Grade
+    public class Student_Misconduct
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Indexed]
         public int IdStudent { get; set; }
         [Indexed]
-        public int IdGrade { get; set; }
+        public int IdMisconduct { get; set; }
     }
 }

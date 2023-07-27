@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
-    public class Grade
+    public class Teacher
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime Date { get; set; }  
+        [PrimaryKey, AutoIncrement, Unique]
+        public string Name { get; set; }    
+        public string Password { get; set; }
     }
 }

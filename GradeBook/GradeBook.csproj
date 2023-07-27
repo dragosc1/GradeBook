@@ -115,7 +115,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Model\Class.cs" />
+    <Compile Include="MVVM\Model\Grade.cs" />
+    <Compile Include="MVVM\Model\Misconduct.cs" />
     <Compile Include="MVVM\Model\Student.cs" />
+    <Compile Include="MVVM\Model\Student_Grade.cs" />
+    <Compile Include="MVVM\Model\Student_Misconduct.cs" />
+    <Compile Include="MVVM\Model\Teacher.cs" />
+    <Compile Include="MVVM\Model\Teacher_Class.cs" />
     <Compile Include="MVVM\ViewModels\Commands\BaseCommand.cs" />
     <Compile Include="MVVM\ViewModels\Commands\EnglishLanguageCommand.cs" />
     <Compile Include="MVVM\ViewModels\Commands\LanguageCommandBase.cs" />

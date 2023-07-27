@@ -12,6 +12,8 @@ namespace GradeBook.MVVM.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        [Indexed]
+        public int IdClass { get; set; }
         public string Name { get; set; }
         public double Average { get; set; }
         public int Absents { get; set; }
