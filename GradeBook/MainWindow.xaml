@@ -1,0 +1,22 @@
+﻿<Window x:Class="GradeBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:GradeBook.MVVM.ViewModels"
+        xmlns:vml="clr-namespace:GradeBook.MVVM.ViewModels.Language"
+        xmlns:views="clr-namespace:GradeBook.MVVM.Views"
+        mc:Ignorable="d"
+        Title="GradeBook" Height="500" Width="800"
+        ResizeMode="NoResize">
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+                <views:LoginView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vml:LanguageViewModel}">
+                <views:LanguagesView/>
+            </DataTemplate>
+        </ContentControl.Resources>
+    </ContentControl>
+</Window>

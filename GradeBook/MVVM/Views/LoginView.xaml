@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="GradeBook.MVVM.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradeBook.MVVM.Views"
+             xmlns:vm="clr-namespace:GradeBook.MVVM.ViewModels"
+             xmlns:vml="clr-namespace:GradeBook.MVVM.ViewModels.Language"
+             xmlns:vmc="clr-namespace:GradeBook.MVVM.ViewModels.Commands"
+             xmlns:views="clr-namespace:GradeBook.MVVM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <UserControl.Resources>
+        <vml:LanguageViewModel x:Key="language"/>
+        <DataTemplate DataType="{x:Type vml:LanguageViewModel}">
+            <views:LanguagesView/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <ContentControl Grid.Column="1" Content="{Binding LanguageViewModel}"/>
+        <Grid Grid.Row="1" 
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="{DynamicResource Greeting}"
+                   HorizontalAlignment="Center"
+                   FontSize="30"/>
+            <Grid Grid.Row="1" Width="425" Height="200" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="2"
+                       Content="{DynamicResource login}"
+                       FontSize="25"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+                <Label Content="{DynamicResource yourname}"
+                       FontSize="20"
+                       Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Height="20"
+                         Width="300"
+                         />
+                <Label Content="{DynamicResource password}"
+                       FontSize="20"
+                       Grid.Row="2"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2"
+                         Grid.Column="1"
+                         Height="20"
+                         Width="300"
+                         />
+            </Grid>
+            <Button Content="LOGIN"
+                    Grid.Row="2"
+                    Height="30"
+                    Width="100"
+                    FontWeight="Bold"
+                    VerticalAlignment="Top"
+                    Margin="0 10 0 0"
+                    Command="{Binding SubmitCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
