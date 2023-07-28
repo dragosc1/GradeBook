@@ -104,7 +104,8 @@
                     FontWeight="Bold"
                     VerticalAlignment="Top"
                     Margin="0 10 0 0"
-                    Command="{Binding LoginCommand}"/>
+                    Command="{Binding LoginCommand}"
+                    CommandParameter="{Binding Teacher}"/>
             </Grid>
         </Grid>
     </Grid>

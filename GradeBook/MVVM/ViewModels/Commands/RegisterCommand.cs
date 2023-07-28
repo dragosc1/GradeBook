@@ -29,12 +29,12 @@ namespace GradeBook.MVVM.ViewModels.Commands
             {
                 string password = parameter as string;
                 sql.CreateTable<Teacher>();
-                List<Teacher> result = sql.Table<Teacher>().Where(t => t.Name.Equals(teacher.Name) && t.Password.Equals(teacher.Password)).ToList();
+                List<Teacher> result = sql.Table<Teacher>().Where(t => t.Name.ToLower().Equals(teacher.Name.ToLower()) && t.Password.Equals(teacher.Password)).ToList();
                 if (result.Count == 0)
                 {
                     sql.Insert(teacher);
                 }
-                else MessageBox.Show("You have already logged in!");
+                else MessageBox.Show("You have already registered!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
