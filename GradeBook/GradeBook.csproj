@@ -85,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +96,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\BindablePasswordBox.xaml.cs">
+      <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -126,8 +133,10 @@
     <Compile Include="MVVM\ViewModels\Commands\BaseCommand.cs" />
     <Compile Include="MVVM\ViewModels\Commands\EnglishLanguageCommand.cs" />
     <Compile Include="MVVM\ViewModels\Commands\LanguageCommandBase.cs" />
+    <Compile Include="MVVM\ViewModels\Commands\RegisterCommand.cs" />
     <Compile Include="MVVM\ViewModels\Commands\RomanianLanguageCommand.cs" />
-    <Compile Include="MVVM\ViewModels\Commands\SubmitCommand.cs" />
+    <Compile Include="MVVM\ViewModels\Commands\LoginCommand.cs" />
+    <Compile Include="MVVM\ViewModels\Helpers\DatabaseHelper.cs" />
     <Compile Include="MVVM\ViewModels\Language\LanguageViewModel.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />

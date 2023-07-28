@@ -10,7 +10,7 @@
              xmlns:views="clr-namespace:GradeBook.MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-    xmlns:System="clr-namespace:System;assembly=mscorlib">
+             xmlns:m="clr-namespace:GradeBook.MVVM.Model" xmlns:components="clr-namespace:GradeBook.Components">
     <UserControl.Resources>
         <vml:LanguageViewModel x:Key="language"/>
         <DataTemplate DataType="{x:Type vml:LanguageViewModel}">
@@ -41,7 +41,10 @@
             <Label Content="{DynamicResource Greeting}"
                    HorizontalAlignment="Center"
                    FontSize="30"/>
-            <Grid Grid.Row="1" Width="425" Height="200" HorizontalAlignment="Center">
+            <Grid Grid.Row="1"
+                  Width="425"
+                  Height="200"
+                  HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="50"/>
@@ -66,26 +69,43 @@
                          Grid.Column="1"
                          Height="20"
                          Width="300"
-                         />
+                         DataContext="{Binding Teacher}"
+                         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="{DynamicResource password}"
                        FontSize="20"
                        Grid.Row="2"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
-                <TextBox Grid.Row="2"
-                         Grid.Column="1"
-                         Height="20"
-                         Width="300"
-                         />
+                <components:BindablePasswordBox Grid.Row="2"
+                             Grid.Column="1"
+                             Height="20"
+                             Width="300"
+                             Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             DataContext="{Binding Teacher}"/>
             </Grid>
-            <Button Content="LOGIN"
-                    Grid.Row="2"
+            <Grid Grid.Row="2" Width="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="REGISTER"
                     Height="30"
                     Width="100"
                     FontWeight="Bold"
                     VerticalAlignment="Top"
                     Margin="0 10 0 0"
-                    Command="{Binding SubmitCommand}"/>
+                    Command="{Binding RegisterCommand}"
+                    CommandParameter="{Binding Teacher}">
+                </Button>
+                <Button Content="LOGIN"
+                    Grid.Column="1"
+                    Height="30"
+                    Width="100"
+                    FontWeight="Bold"
+                    VerticalAlignment="Top"
+                    Margin="0 10 0 0"
+                    Command="{Binding LoginCommand}"/>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

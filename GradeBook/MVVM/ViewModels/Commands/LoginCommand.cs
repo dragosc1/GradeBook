@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace GradeBook.MVVM.ViewModels.Commands
 {
-    public class SubmitCommand : BaseCommand
+    public class LoginCommand : BaseCommand
     {
         public override void Execute(object parameter)
         {
