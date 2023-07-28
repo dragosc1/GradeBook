@@ -3,6 +3,7 @@
     xmlns:System="clr-namespace:System;assembly=mscorlib">
 
     <System:String x:Key="Greeting">Buna ziua!</System:String>
+    <System:String x:Key="Greeting2">Buna {0}!</System:String>
     <System:String x:Key="login">Autentificare</System:String>
     <System:String x:Key="password">Parola:</System:String>
     <System:String x:Key="yourname">Nume:</System:String>

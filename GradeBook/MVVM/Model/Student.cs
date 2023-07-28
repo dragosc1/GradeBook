@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// This is the student model class
+    /// </summary>
     [Table("Student")]
     public  class Student
     {

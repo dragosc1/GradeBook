@@ -12,7 +12,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:m="clr-namespace:GradeBook.MVVM.Model" xmlns:components="clr-namespace:GradeBook.Components">
     <UserControl.Resources>
-        <vml:LanguageViewModel x:Key="language"/>
         <DataTemplate DataType="{x:Type vml:LanguageViewModel}">
             <views:LanguagesView/>
         </DataTemplate>

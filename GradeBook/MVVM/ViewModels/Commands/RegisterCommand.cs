@@ -39,7 +39,7 @@ namespace GradeBook.MVVM.ViewModels.Commands
                 if (result.Count == 0)
                 {
                     sql.Insert(teacher);
-                    NavigationStore.CurrentViewModel = new TeacherViewModel();
+                    NavigationStore.CurrentViewModel = new TeacherViewModel(NavigationStore, teacher);
                 }
                 else MessageBox.Show("You have already registered!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

@@ -9,6 +9,9 @@ namespace GradeBook.MVVM.ViewModels.Commands
 {
     public abstract class BaseCommand : ICommand
     {
+        /// <summary>
+        /// This is the Base Command clase from which every Command inherits
+        /// </summary>
         public event EventHandler CanExecuteChanged {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }

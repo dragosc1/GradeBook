@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// Misconduct done by a student
+    /// </summary>
+    [Table("Misconduct")]
     public class Misconduct
     {
         [PrimaryKey, AutoIncrement]

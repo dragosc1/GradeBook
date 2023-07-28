@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// Student's grade given by the teacher
+    /// </summary>
+    [Table("Grade")]
     public class Grade
     {
         [PrimaryKey, AutoIncrement]

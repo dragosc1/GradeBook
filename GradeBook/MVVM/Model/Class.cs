@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// Student class name and year (Ex: 9A, 10B) information
+    /// </summary>
+    [Table("Class")]
     public class Class
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
         public int Year { get; set; }
-        public int NrStudents { get; set; }
     }
 }

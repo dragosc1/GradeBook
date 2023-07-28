@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// This is the teacher model class
+    /// </summary>
+    [Table("Teacher")]
     public class Teacher : INotifyPropertyChanged
     {
         [PrimaryKey, AutoIncrement]

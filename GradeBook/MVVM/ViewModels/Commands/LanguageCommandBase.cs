@@ -16,8 +16,12 @@ namespace GradeBook.MVVM.ViewModels.Commands
         /// cointains a static function called SetLanguage from which you can set the language
         /// has basic functionality for can execute and execute
         /// </summary>
-        
-        public event EventHandler CanExecuteChanged;
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public virtual bool CanExecute(object parameter)
         {

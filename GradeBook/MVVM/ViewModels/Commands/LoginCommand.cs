@@ -39,7 +39,7 @@ namespace GradeBook.MVVM.ViewModels.Commands
                 List<Teacher> result = sql.Table<Teacher>().Where(t => t.Name.ToLower().Equals(teacher.Name.ToLower()) && t.Password.Equals(teacher.Password)).ToList();
                 if (result.Count == 1)
                 {
-                    NavigationStore.CurrentViewModel = new TeacherViewModel();
+                    NavigationStore.CurrentViewModel = new TeacherViewModel(NavigationStore, result[0]);
                 }
                 else MessageBox.Show("Invalid Login", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
