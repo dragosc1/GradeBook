@@ -2,6 +2,7 @@
 using GradeBook.MVVM.ViewModels.Commands;
 using GradeBook.MVVM.ViewModels.Helpers;
 using GradeBook.MVVM.ViewModels.Language;
+using GradeBook.Store;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace GradeBook.MVVM.ViewModels
         public LanguageViewModel LanguageViewModel { get; set; }
         public LoginCommand LoginCommand { get; set; }
         public RegisterCommand RegisterCommand { get; set; }
+        public NavigationStore NavigationStore { get; set; }
 
         private Teacher teacher;
 
@@ -32,12 +34,14 @@ namespace GradeBook.MVVM.ViewModels
             }
         }
 
-        public LoginViewModel(LanguageViewModel lang)
+        public LoginViewModel(LanguageViewModel lang, NavigationStore nav)
         {
             LanguageViewModel = lang;
-            LoginCommand = new LoginCommand();
-            RegisterCommand = new RegisterCommand();
+            NavigationStore = nav;
+            LoginCommand = new LoginCommand(nav);
+            RegisterCommand = new RegisterCommand(nav);
             Teacher = new Teacher();
+            
         }
     }
 }

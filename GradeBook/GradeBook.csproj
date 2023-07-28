@@ -85,6 +85,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Store\NavigationStore.cs" />
     <Page Include="Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\Views\TeacherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\Model\Class.cs" />
@@ -140,12 +145,16 @@
     <Compile Include="MVVM\ViewModels\Language\LanguageViewModel.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\TeacherViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ViewModelBase.cs" />
     <Compile Include="MVVM\Views\LanguagesView.xaml.cs">
       <DependentUpon>LanguagesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Views\TeacherView.xaml.cs">
+      <DependentUpon>TeacherView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

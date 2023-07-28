@@ -31,12 +31,7 @@ namespace GradeBook.Components
         // Using a DependencyProperty as the backing store for Password.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PasswordProperty =
             DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox), new PropertyMetadata(string.Empty));
-
-        private void updatePassword()
-        {
-            passwordBox.Password = Password;
-        }
-
+        
         public BindablePasswordBox()
         {
             InitializeComponent();

@@ -1,5 +1,6 @@
 ﻿using GradeBook.MVVM.Model;
 using GradeBook.MVVM.ViewModels.Helpers;
+using GradeBook.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,11 @@ namespace GradeBook.MVVM.ViewModels.Commands
 {
     public class RegisterCommand : BaseCommand
     {
+        NavigationStore NavigationStore { get; set; }
+        public RegisterCommand(NavigationStore nav)
+        {
+            NavigationStore = nav;
+        }
         public override bool CanExecute(object parameter)
         {
             Teacher teacher = (Teacher)parameter;
@@ -33,6 +39,7 @@ namespace GradeBook.MVVM.ViewModels.Commands
                 if (result.Count == 0)
                 {
                     sql.Insert(teacher);
+                    NavigationStore.CurrentViewModel = new TeacherViewModel();
                 }
                 else MessageBox.Show("You have already registered!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

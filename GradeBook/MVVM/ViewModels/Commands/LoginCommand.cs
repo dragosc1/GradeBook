@@ -1,5 +1,6 @@
 ﻿using GradeBook.MVVM.Model;
 using GradeBook.MVVM.ViewModels.Helpers;
+using GradeBook.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,12 @@ namespace GradeBook.MVVM.ViewModels.Commands
 {
     public class LoginCommand : BaseCommand
     {
+        NavigationStore NavigationStore { get; set; }
+        public LoginCommand(NavigationStore nav)
+        {
+            NavigationStore = nav;
+        }
+
         public override bool CanExecute(object parameter)
         {
             Teacher teacher = (Teacher)parameter;
@@ -32,7 +39,7 @@ namespace GradeBook.MVVM.ViewModels.Commands
                 List<Teacher> result = sql.Table<Teacher>().Where(t => t.Name.ToLower().Equals(teacher.Name.ToLower()) && t.Password.Equals(teacher.Password)).ToList();
                 if (result.Count == 1)
                 {
-                    // go in 
+                    NavigationStore.CurrentViewModel = new TeacherViewModel();
                 }
                 else MessageBox.Show("Invalid Login", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

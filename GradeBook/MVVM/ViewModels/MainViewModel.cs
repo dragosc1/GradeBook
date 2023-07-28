@@ -1,4 +1,5 @@
 ﻿using GradeBook.MVVM.ViewModels.Language;
+using GradeBook.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,20 @@ namespace GradeBook.MVVM.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        public NavigationStore NavigationStore { get; }
         public LanguageViewModel LanguageViewModel { get; }
+        public ViewModelBase CurrentViewModel => NavigationStore.CurrentViewModel;
 
-        public MainViewModel() {
+        public MainViewModel(NavigationStore nav) {
             LanguageViewModel = new LanguageViewModel();
-            CurrentViewModel = new LoginViewModel(LanguageViewModel);
+            NavigationStore = nav;
+            NavigationStore.CurrentViewModel = new LoginViewModel(LanguageViewModel, NavigationStore);
+            NavigationStore.NavigationChanged += OnNavigationChanged;
+        }
+
+        private void OnNavigationChanged()
+        {
+            OnPropertyChanged("CurrentViewModel"); 
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GradeBook.MVVM.ViewModels;
+using GradeBook.Store;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,9 +17,10 @@ namespace GradeBook
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            NavigationStore _currentNavigation = new NavigationStore();
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_currentNavigation)
             };
             MainWindow.Show();
             base.OnStartup(e);
