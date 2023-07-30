@@ -41,7 +41,12 @@ namespace GradeBook.MVVM.ViewModels
             LoginCommand = new LoginCommand(nav);
             RegisterCommand = new RegisterCommand(nav);
             Teacher = new Teacher();
-            
+            Teacher.PropertyChanged += OnTeacherPropertyChanged;
+        }
+
+        private void OnTeacherPropertyChanged(string propName)
+        {
+            OnPropertyChanged(propName);
         }
     }
 }

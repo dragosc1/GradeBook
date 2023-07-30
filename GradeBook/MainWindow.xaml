@@ -8,7 +8,8 @@
         xmlns:views="clr-namespace:GradeBook.MVVM.Views"
         mc:Ignorable="d"
         Title="GradeBook" Height="500" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type vm:LoginViewModel}">

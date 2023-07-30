@@ -15,7 +15,34 @@ namespace GradeBook.MVVM.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Year { get; set; }
+
+        public event Action<string> ClassPropertyChanged;
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { 
+                name = value;
+                OnClassPropertyChanged(nameof(Name));
+            }
+        }
+
+        private int year;
+
+        public int Year
+        {
+            get { return year; }
+            set { 
+                year = value;
+                OnClassPropertyChanged(nameof(Year));
+            }
+        }
+
+        private void OnClassPropertyChanged(string v)
+        {
+            ClassPropertyChanged?.Invoke(v);
+        }
     }
 }

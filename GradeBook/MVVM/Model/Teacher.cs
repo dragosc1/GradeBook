@@ -12,10 +12,12 @@ namespace GradeBook.MVVM.Model
     /// This is the teacher model class
     /// </summary>
     [Table("Teacher")]
-    public class Teacher : INotifyPropertyChanged
+    public class Teacher
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
+        public event Action<string> PropertyChanged;
 
         private string name;
         public string Name
@@ -23,9 +25,10 @@ namespace GradeBook.MVVM.Model
             get { return name; }
             set {
                 name = value;
-                OnPropertyChanged(nameof(Name));
+                OnTeacherPropertyChanged(nameof(Name));
             }
         }
+
         private string password;
 
         public string Password
@@ -33,14 +36,13 @@ namespace GradeBook.MVVM.Model
             get { return password; }
             set { 
                 password = value;
-                OnPropertyChanged(nameof(Password));
+                OnTeacherPropertyChanged(nameof(Password));
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+        private void OnTeacherPropertyChanged(string propName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(propName);
         }
     }
 }
