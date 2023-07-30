@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GradeBook.MVVM.Model
 {
     /// <summary>
-    /// Student class name and year (Ex: 9A, 10B) information
+    /// Student's class name and year of study (Ex: 9A, 10B) information
     /// </summary>
     [Table("Class")]
     public class Class

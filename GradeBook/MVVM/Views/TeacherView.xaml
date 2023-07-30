@@ -22,15 +22,44 @@
                 <ListView ItemsSource="{Binding Classes}" Margin="0 10 0 10">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding Name}"/>
-                                <TextBlock Text="{Binding Year}"/>
+                            <StackPanel Orientation="Horizontal" 
+                                        Background="AliceBlue"
+                                        Width="550"
+                                        Margin="1 2 1 2">
+                                <TextBlock Text="Class: "
+                                           FontSize="20"
+                                           Foreground="DarkRed"/>
+                                <TextBlock Text="{Binding Year}"
+                                           FontSize="20"
+                                           Foreground="DarkBlue"/>
+                                <TextBlock Text="{Binding Name}"
+                                           FontSize="20"
+                                           Foreground="DarkBlue"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Command="{Binding AddClassCommand}"
-                        Content="Add Class" Width="70"/>
+                <Grid Margin="0 0 0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding AddClassCommand}"
+                        Content="Add Class"
+                        Width="100"
+                        FontSize="15"/>
+                    <Button Command="{Binding UpdateClassCommand}"
+                        Content="Update Class"
+                        Width="100"
+                        FontSize="15"
+                        Grid.Column="1"/>
+                    <Button Command="{Binding DeleteClassCommand}"
+                        Content="Delete Class"
+                        Width="100"
+                        FontSize="15"
+                        Grid.Column="2"/>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Grid>
