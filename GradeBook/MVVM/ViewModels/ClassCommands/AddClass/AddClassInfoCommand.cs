@@ -39,15 +39,21 @@ namespace GradeBook.MVVM.ViewModels.ClassCommands.AddClass
             {
                 sql.CreateTable<Teacher_Class>();
                 sql.CreateTable<Class>();
-                sql.Insert(classObj);
+
+                if (sql.Table<Class>().Where(c => c.Name == classObj.Name && c.Year == classObj.Year).Count() == 0)
+                    sql.Insert(classObj);
+                else classObj = sql.Table<Class>().Where(c => c.Name == classObj.Name && c.Year == classObj.Year).FirstOrDefault();
                 Teacher_Class t_c = new Teacher_Class()
                 {
                     IdClass = classObj.Id,
                     IdTeacher = teacher.Id
                 };
-                sql.Insert(t_c);
+
+                if (sql.Table<Teacher_Class>().Where(teach_c => teach_c.IdTeacher == teacher.Id && teach_c.IdClass == classObj.Id).Count() == 0)
+                    sql.Insert(t_c);
             }
             window.Close();
         }
+
     }
 }
