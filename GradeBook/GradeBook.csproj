@@ -92,6 +92,13 @@
       <DependentUpon>AddClassWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\DeleteClass\DeleteClassCommand.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassCommand.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindow.xaml.cs">
+      <DependentUpon>UpdateClassWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Page Include="Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
@@ -113,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

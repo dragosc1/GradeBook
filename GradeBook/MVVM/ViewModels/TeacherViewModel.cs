@@ -1,5 +1,7 @@
 ﻿using GradeBook.MVVM.Model;
 using GradeBook.MVVM.ViewModels.ClassCommands.AddClass;
+using GradeBook.MVVM.ViewModels.ClassCommands.DeleteClass;
+using GradeBook.MVVM.ViewModels.ClassCommands.UpdateClass;
 using GradeBook.MVVM.ViewModels.Helpers;
 using GradeBook.Store;
 using System;
@@ -18,11 +20,16 @@ namespace GradeBook.MVVM.ViewModels
         public NavigationStore NavigationStore { get; set; }
         public ObservableCollection<Class> Classes { get; set; }
         public AddClassCommand AddClassCommand { get; set; }
+        public UpdateClassCommand UpdateClassCommand { get; set; }
+        public DeleteClassCommand DeleteClassCommand { get; set; }
+        public Class SelectedClass { get; set; }
         public TeacherViewModel(NavigationStore nav, Teacher teacher) { 
             NavigationStore = nav;
             Teacher = teacher;
             Classes = new ObservableCollection<Class>(DatabaseHelper.ReadData(teacher));
             AddClassCommand = new AddClassCommand(Classes, teacher);
+            UpdateClassCommand = new UpdateClassCommand(Classes, teacher);  
+            DeleteClassCommand = new DeleteClassCommand(Classes, teacher);
         }
     }
 }
