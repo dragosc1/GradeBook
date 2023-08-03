@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="SQLite-net, Version=1.8.116.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sqlite-net-pcl.1.8.116\lib\netstandard2.0\SQLite-net.dll</HintPath>
     </Reference>
@@ -92,6 +95,7 @@
       <DependentUpon>AddClassWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\ClassChangedCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\DeleteClass\DeleteClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassInfoCommand.cs" />
@@ -99,6 +103,14 @@
       <DependentUpon>UpdateClassWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindow.xaml.cs">
+      <DependentUpon>AddStudentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\DeleteStudent\DeleteStudentCommand.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Page Include="Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
@@ -135,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\Views\LanguagesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -165,7 +181,6 @@
     <Compile Include="MVVM\ViewModels\Commands\LoginCommand.cs" />
     <Compile Include="MVVM\ViewModels\Helpers\DatabaseHelper.cs" />
     <Compile Include="MVVM\ViewModels\Language\LanguageViewModel.cs" />
-    <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModels\TeacherViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ViewModelBase.cs" />
@@ -208,7 +223,9 @@
     <Resource Include="Images\Flag_of_Romania.svg.png" />
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MVVM\ViewModels\StudentCommands\UpdateStudent\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

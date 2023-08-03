@@ -17,9 +17,24 @@ namespace GradeBook.MVVM.Model
         public int Id { get; set; }
         [Indexed]
         public int IdClass { get; set; }
-        public string Name { get; set; }
-        public double Average { get; set; }
+
+        public event Action<string> StudentPropertyChanged;
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { 
+                name = value;
+                OnStudentPropertyChanged(nameof(Name));
+            }
+        }
+
+        private void OnStudentPropertyChanged(string prop)
+        {
+            StudentPropertyChanged?.Invoke(prop);
+        }
+
         public int Absents { get; set; }
-        public int ActivityGrade { get; set; }
     }
 }

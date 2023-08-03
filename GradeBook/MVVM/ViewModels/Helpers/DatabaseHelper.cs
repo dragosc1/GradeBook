@@ -31,5 +31,15 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        public static List<Student> ReadData(Class c)
+        {
+            List<Student> list;
+            using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
+            {
+                sql.CreateTable<Student>();
+                list = sql.Table<Student>().Where(st => st.IdClass == c.Id).ToList();
+            }
+            return list;
+        }
     }
 }
