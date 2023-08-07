@@ -25,7 +25,6 @@ namespace GradeBook.MVVM.ViewModels.StudentCommands.AddStudent
         public override void Execute(object parameter)
         {
             Class SelectedClass = parameter as Class;
-            MessageBox.Show(SelectedClass.Name);
             AddStudentWindow window = new AddStudentWindow
             {
                 DataContext = new AddStudentWindowViewModel(SelectedClass)

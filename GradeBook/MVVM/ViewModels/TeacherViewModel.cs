@@ -6,6 +6,7 @@ using GradeBook.MVVM.ViewModels.ClassCommands.UpdateClass;
 using GradeBook.MVVM.ViewModels.Helpers;
 using GradeBook.MVVM.ViewModels.StudentCommands.AddStudent;
 using GradeBook.MVVM.ViewModels.StudentCommands.DeleteStudent;
+using GradeBook.MVVM.ViewModels.StudentCommands.UpdateStudent;
 using GradeBook.Store;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,9 @@ namespace GradeBook.MVVM.ViewModels
         public UpdateClassCommand UpdateClassCommand { get; set; }
         public DeleteClassCommand DeleteClassCommand { get; set; }
         public ClassChangedCommand ClassChangedCommand { get; set; }
+        
         public AddStudentCommand AddStudentCommand { get; set; }
+        public UpdateStudentCommand UpdateStudentCommand { get; set; }
         public DeleteStudentCommand DeleteStudentCommand { get; set; }
 
         public TeacherViewModel(NavigationStore nav, Teacher teacher) { 
@@ -44,6 +47,7 @@ namespace GradeBook.MVVM.ViewModels
             DeleteClassCommand = new DeleteClassCommand(Classes, teacher);
 
             AddStudentCommand = new AddStudentCommand(Students);
+            UpdateStudentCommand = new UpdateStudentCommand(Students);
             DeleteStudentCommand = new DeleteStudentCommand(Students);
             ClassChangedCommand = new ClassChangedCommand(Students);
         }

@@ -95,15 +95,28 @@
                           ItemsSource="{Binding Students}"
                           Margin="0 0 0 10">
                     <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
+                        <DataTemplate> 
+                            <Grid Width="550" 
+                                  Margin="2 0 0 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Student: "
+                                           Foreground="Red"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Background="AliceBlue"/>
                                 <TextBlock Text="{Binding Name}"
-                                       FontSize="20"/>
-                            </StackPanel>
+                                           FontSize="20"
+                                           Grid.Column="1"
+                                           Foreground="DarkOrange"
+                                           Background="AliceBlue"/>
+                            </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Grid>
+                <Grid Margin="0 0 0 10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -113,14 +126,30 @@
                         Command="{Binding AddStudentCommand}"
                         Width="100"
                         FontSize="15"
+                        Background="Green"
                         FontWeight="Bold">
                         <Button.CommandParameter>
                             <Binding ElementName="classListView" Path="SelectedValue"/>
                         </Button.CommandParameter>
                     </Button>
+                    <Button Content="Update Student"
+                            Grid.Column="1"
+                            Width="120"
+                            Background="Cyan"
+                            FontSize="15"
+                            FontWeight="Bold"
+                            Command="{Binding UpdateStudentCommand}">
+                        <Button.CommandParameter>
+                            <MultiBinding Converter="{StaticResource conv}">
+                                <Binding ElementName="studentListView" Path="SelectedValue"/>
+                                <Binding ElementName="classListView" Path="SelectedValue"/>
+                            </MultiBinding>
+                        </Button.CommandParameter>
+                    </Button>
                     <Button Grid.Column="2"
                             Width="120"
                             Content="Delete Student"
+                            Background="Red"
                             FontSize="15"
                             FontWeight="Bold"
                             Command="{Binding DeleteStudentCommand}">
@@ -132,6 +161,11 @@
                         </Button.CommandParameter>
                     </Button>
                 </Grid>
+                <Button Content="Acces Student"
+                        Width="120"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Background="LightGreen"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

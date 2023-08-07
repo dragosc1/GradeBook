@@ -18,7 +18,8 @@ namespace GradeBook.MVVM.ViewModels.Helpers
         public static string connectionString = Path.Combine(myDocumentsPath, dataBaseName);
         public static List<Class> ReadData(Teacher t)
         {
-            List<Class> list;
+            List<Class> list = new List<Class>();
+            if (t == null) return list;
             using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
             {
                 sql.CreateTable<Teacher_Class>();
@@ -33,7 +34,8 @@ namespace GradeBook.MVVM.ViewModels.Helpers
         }
         public static List<Student> ReadData(Class c)
         {
-            List<Student> list;
+            List<Student> list = new List<Student>();
+            if (c == null) return list; 
             using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
             {
                 sql.CreateTable<Student>();

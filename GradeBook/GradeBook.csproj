@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\DeleteStudent\DeleteStudentCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindow.xaml.cs">
+      <DependentUpon>UpdateStudentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindowViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Page Include="Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
@@ -148,6 +154,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,9 +233,7 @@
     <Resource Include="Images\Flag_of_Romania.svg.png" />
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVVM\ViewModels\StudentCommands\UpdateStudent\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
