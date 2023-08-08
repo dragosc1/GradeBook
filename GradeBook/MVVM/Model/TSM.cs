@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 namespace GradeBook.MVVM.Model
 {
     /// <summary>
-    /// Associative table between student and misconduct
+    /// Associative table between teacher, student and misconduct
     /// </summary>
     [Table("Student_Misconduct")]
-    public class Student_Misconduct
+    public class TSM
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Id { get; set; }
+        [Indexed]
+        public int IdTeacher { get; set; }
         [Indexed]
         public int IdStudent { get; set; }
         [Indexed]
         public int IdMisconduct { get; set; }
-        [Indexed]
-        public int IdTeacher { get; set; }
     }
 }
