@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\AccessStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindow.xaml.cs">
@@ -111,12 +112,17 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\DeleteStudent\DeleteStudentCommand.cs" />
+    <Compile Include="MVVM\ViewModels\StudentCommands\SearchTextChangedCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindow.xaml.cs">
       <DependentUpon>UpdateStudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\StudentViewModel.cs" />
+    <Compile Include="MVVM\Views\StudentView.xaml.cs">
+      <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Store\NavigationStore.cs" />
     <Page Include="Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
@@ -168,6 +174,10 @@
     <Page Include="MVVM\Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\Views\StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\Views\TeacherView.xaml">
       <SubType>Designer</SubType>

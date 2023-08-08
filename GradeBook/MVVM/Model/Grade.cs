@@ -16,6 +16,7 @@ namespace GradeBook.MVVM.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public double Value { get; set; }
-        public DateTime Date { get; set; }  
+        public DateTime Date { get; set; }
+        public string Information { get; set; }
     }
 }

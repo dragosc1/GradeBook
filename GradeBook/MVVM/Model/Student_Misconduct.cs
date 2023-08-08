@@ -19,5 +19,7 @@ namespace GradeBook.MVVM.Model
         public int IdStudent { get; set; }
         [Indexed]
         public int IdMisconduct { get; set; }
+        [Indexed]
+        public int IdTeacher { get; set; }
     }
 }

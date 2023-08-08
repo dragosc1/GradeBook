@@ -41,7 +41,8 @@
                                         Margin="1 2 1 2">
                                 <TextBlock Text="Class: "
                                            FontSize="20"
-                                           Foreground="DarkRed"/>
+                                           Foreground="DarkRed"
+                                           FontWeight="Bold"/>
                                 <TextBlock Text="{Binding Year}"
                                            FontSize="20"
                                            Foreground="DarkBlue"/>
@@ -52,7 +53,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Grid Margin="0 0 0 20">
+                <Grid Margin="0 0 0 50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -91,6 +92,31 @@
                            HorizontalAlignment="Center"
                            FontSize="20"
                            Margin="0 0 0 10"/>
+                <Grid HorizontalAlignment="Center"
+                      Margin="0 10 0 15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Search:   "
+                               FontSize="17.5"/>
+                    <TextBox Grid.Column="1"
+                             FontSize="17.5"
+                             Text="{Binding Filter,UpdateSourceTrigger=PropertyChanged}">
+                        <ie:Interaction.Triggers>
+                            <ie:EventTrigger EventName="TextChanged">
+                                <ie:InvokeCommandAction Command="{Binding SearchTextChangedCommand}">
+                                    <ie:InvokeCommandAction.CommandParameter>
+                                        <MultiBinding Converter="{StaticResource conv}">
+                                            <Binding ElementName="classListView" Path="SelectedValue"/>
+                                            <Binding Path="Filter"/>
+                                        </MultiBinding>
+                                    </ie:InvokeCommandAction.CommandParameter>
+                                </ie:InvokeCommandAction>
+                            </ie:EventTrigger>
+                        </ie:Interaction.Triggers>
+                    </TextBox>
+                </Grid>
                 <ListView x:Name="studentListView"
                           ItemsSource="{Binding Students}"
                           Margin="0 0 0 10">
@@ -103,20 +129,20 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="Student: "
-                                           Foreground="Red"
+                                           Foreground="DarkRed"
                                            FontSize="20"
-                                           FontWeight="Bold"
-                                           Background="AliceBlue"/>
+                                           Background="AliceBlue"
+                                           FontWeight="Bold"/>
                                 <TextBlock Text="{Binding Name}"
                                            FontSize="20"
                                            Grid.Column="1"
-                                           Foreground="DarkOrange"
+                                           Foreground="DarkBlue"
                                            Background="AliceBlue"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Grid Margin="0 0 0 10">
+                <Grid Margin="0 0 0 50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -165,7 +191,10 @@
                         Width="120"
                         FontSize="15"
                         FontWeight="Bold"
-                        Background="LightGreen"/>
+                        Background="LightGreen"
+                        Margin="0 0 0 30"
+                        Command="{Binding AccessStudentCommand}"
+                        CommandParameter="{Binding ElementName=studentListView, Path=SelectedValue}"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -7,4 +7,5 @@
     <System:String x:Key="login">Autentificare</System:String>
     <System:String x:Key="password">Parola:</System:String>
     <System:String x:Key="yourname">Nume:</System:String>
+    <System:String x:Key="profile">Profil {0}!</System:String>
 </ResourceDictionary>

@@ -4,6 +4,7 @@ using GradeBook.MVVM.ViewModels.ClassCommands.AddClass;
 using GradeBook.MVVM.ViewModels.ClassCommands.DeleteClass;
 using GradeBook.MVVM.ViewModels.ClassCommands.UpdateClass;
 using GradeBook.MVVM.ViewModels.Helpers;
+using GradeBook.MVVM.ViewModels.StudentCommands;
 using GradeBook.MVVM.ViewModels.StudentCommands.AddStudent;
 using GradeBook.MVVM.ViewModels.StudentCommands.DeleteStudent;
 using GradeBook.MVVM.ViewModels.StudentCommands.UpdateStudent;
@@ -35,6 +36,21 @@ namespace GradeBook.MVVM.ViewModels
         public UpdateStudentCommand UpdateStudentCommand { get; set; }
         public DeleteStudentCommand DeleteStudentCommand { get; set; }
 
+        public SearchTextChangedCommand SearchTextChangedCommand { get; set; }
+
+        public AccessStudentCommand AccessStudentCommand { get; set; }
+
+        private string filter;
+
+        public string Filter
+        {
+            get { return filter; }
+            set { 
+                filter = value;
+                OnPropertyChanged(nameof(Filter));  
+            }
+        }
+
         public TeacherViewModel(NavigationStore nav, Teacher teacher) { 
             NavigationStore = nav;
             Teacher = teacher;
@@ -50,6 +66,11 @@ namespace GradeBook.MVVM.ViewModels
             UpdateStudentCommand = new UpdateStudentCommand(Students);
             DeleteStudentCommand = new DeleteStudentCommand(Students);
             ClassChangedCommand = new ClassChangedCommand(Students);
+
+            Filter = "";
+            SearchTextChangedCommand = new SearchTextChangedCommand(Students);
+
+            AccessStudentCommand = new AccessStudentCommand(NavigationStore, Teacher);
         }
     }
 }
