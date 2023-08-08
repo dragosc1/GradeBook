@@ -24,35 +24,37 @@
                        Margin="0 20 0 0"
                        HorizontalAlignment="Center"
                        FontSize="20"/>
-                <ListView ItemsSource="{Binding Classes}"
-                          Margin="0 10 0 10"
+                <ScrollViewer Margin="0 10 0 10"
+                              MaxHeight="150">
+                    <ListView ItemsSource="{Binding Classes}"
                           x:Name="classListView">
-                    <ie:Interaction.Triggers>
-                        <ie:EventTrigger EventName="SelectionChanged">
-                            <ie:InvokeCommandAction Command="{Binding ClassChangedCommand}"
-                                                    CommandParameter="{Binding ElementName=classListView, Path=SelectedValue}"/>
-                        </ie:EventTrigger>
-                    </ie:Interaction.Triggers>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" 
-                                        Background="AliceBlue"
-                                        Width="550"
-                                        Margin="1 2 1 2">
-                                <TextBlock Text="Class: "
-                                           FontSize="20"
-                                           Foreground="DarkRed"
-                                           FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Year}"
-                                           FontSize="20"
-                                           Foreground="DarkBlue"/>
-                                <TextBlock Text="{Binding Name}"
-                                           FontSize="20"
-                                           Foreground="DarkBlue"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                        <ie:Interaction.Triggers>
+                            <ie:EventTrigger EventName="SelectionChanged">
+                                <ie:InvokeCommandAction Command="{Binding ClassChangedCommand}"
+                                                        CommandParameter="{Binding ElementName=classListView, Path=SelectedValue}"/>
+                            </ie:EventTrigger>
+                        </ie:Interaction.Triggers>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" 
+                                            Background="AliceBlue"
+                                            Width="532"
+                                            Margin="1 2 1 2">
+                                    <TextBlock Text="Class: "
+                                               FontSize="20"
+                                               Foreground="DarkRed"
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Year}"
+                                               FontSize="20"
+                                               Foreground="DarkBlue"/>
+                                    <TextBlock Text="{Binding Name}"
+                                               FontSize="20"
+                                               Foreground="DarkBlue"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
                 <Grid Margin="0 0 0 50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -63,14 +65,12 @@
                             Content="Add Class"
                             Width="100"
                             FontSize="15"
-                            Background="Green"
                             FontWeight="Bold"/>
                     <Button Command="{Binding UpdateClassCommand}"
                             Content="Update Class"
                             Width="100"
                             FontSize="15"
                             Grid.Column="1"
-                            Background="Cyan"
                             FontWeight="Bold">
                         <Button.CommandParameter>
                             <Binding ElementName="classListView" Path="SelectedValue"/>
@@ -81,7 +81,6 @@
                             Width="100"
                             FontSize="15"
                             Grid.Column="2"
-                            Background="Red"
                             FontWeight="Bold">
                         <Button.CommandParameter>
                             <Binding ElementName="classListView" Path="SelectedValue"/>
@@ -117,31 +116,34 @@
                         </ie:Interaction.Triggers>
                     </TextBox>
                 </Grid>
-                <ListView x:Name="studentListView"
-                          ItemsSource="{Binding Students}"
-                          Margin="0 0 0 10">
+                <ScrollViewer MaxHeight="150"
+                              CanContentScroll="True"
+                              Margin="0 0 0 10">
+                    <ListView x:Name="studentListView"
+                          ItemsSource="{Binding Students}">
                     <ListView.ItemTemplate>
                         <DataTemplate> 
-                            <Grid Width="550" 
+                            <Grid Width="532" 
                                   Margin="2 0 0 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="Student: "
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Student: "
                                            Foreground="DarkRed"
                                            FontSize="20"
                                            Background="AliceBlue"
                                            FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Name}"
+                                    <TextBlock Text="{Binding Name}"
                                            FontSize="20"
                                            Grid.Column="1"
                                            Foreground="DarkBlue"
                                            Background="AliceBlue"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
                 <Grid Margin="0 0 0 50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -152,7 +154,6 @@
                         Command="{Binding AddStudentCommand}"
                         Width="100"
                         FontSize="15"
-                        Background="Green"
                         FontWeight="Bold">
                         <Button.CommandParameter>
                             <Binding ElementName="classListView" Path="SelectedValue"/>
@@ -161,7 +162,6 @@
                     <Button Content="Update Student"
                             Grid.Column="1"
                             Width="120"
-                            Background="Cyan"
                             FontSize="15"
                             FontWeight="Bold"
                             Command="{Binding UpdateStudentCommand}">
@@ -175,7 +175,6 @@
                     <Button Grid.Column="2"
                             Width="120"
                             Content="Delete Student"
-                            Background="Red"
                             FontSize="15"
                             FontWeight="Bold"
                             Command="{Binding DeleteStudentCommand}">

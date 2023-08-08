@@ -25,7 +25,7 @@ namespace GradeBook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en-UK")]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-GB")]
         public string language {
             get {
                 return ((string)(this["language"]));

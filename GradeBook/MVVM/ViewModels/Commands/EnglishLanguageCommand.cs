@@ -13,7 +13,7 @@ namespace GradeBook.MVVM.ViewModels.Commands
     {
         public override void Execute(object parameter)
         {
-            SetLanguage("en-UK");
+            SetLanguage("en-GB");
         }
     }
 }

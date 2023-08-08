@@ -89,6 +89,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\AddConverter.cs" />
+    <Compile Include="Converters\DateToStringConverter.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindow.xaml.cs">
@@ -103,6 +104,7 @@
       <DependentUpon>UpdateClassWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeCommand.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AccessStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
@@ -151,7 +153,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\ViewModels\Language\Dictionary-en-UK.xaml">
+    <Page Include="MVVM\ViewModels\Language\Dictionary-en-GB.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -243,7 +245,10 @@
     <Resource Include="Images\Flag_of_Romania.svg.png" />
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MVVM\ViewModels\GradeCommands\DeleteGrade\" />
+    <Folder Include="MVVM\ViewModels\GradeCommands\UpdateGrade\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

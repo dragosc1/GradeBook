@@ -5,7 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MVVM/ViewModels/Language/Dictionary-en-UK.xaml"/>
+                <ResourceDictionary Source="MVVM/ViewModels/Language/Dictionary-en-GB.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
