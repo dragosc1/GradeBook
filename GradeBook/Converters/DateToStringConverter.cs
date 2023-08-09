@@ -15,7 +15,9 @@ namespace GradeBook.Converters
             string cultureLanguage = Properties.Settings.Default.language;
             culture = new CultureInfo(cultureLanguage);
             DateTime dateTime = (DateTime)value;
-            return dateTime.ToString();
+            if (cultureLanguage == "ro-RO")
+                return dateTime.ToString("dd/MM/yyyy", culture);
+            else return dateTime.ToString("MM/dd/yyyy", culture);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

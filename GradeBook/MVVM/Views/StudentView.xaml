@@ -32,19 +32,24 @@
                 <Label Content="Grades"
                        FontSize="20"
                        HorizontalAlignment="Center"/>
-                <ScrollViewer>
-                    <ListView>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Value, StringFormat=Grade: {0}}"/>
-                                    <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
-                                    <TextBlock Text="{Binding Information}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
+                <ListView ItemsSource="{Binding Grades}"
+                          MinHeight="30"
+                          MaxHeight="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Value, StringFormat=Grade: {0}}"/>
+                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
+                                <TextBlock Text="{Binding Information}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Add Grade"
+                        Width="110"
+                        FontSize="15"
+                        Margin="0 10 0 0"
+                        Command="{Binding AddGradeCommand}"/>
             </StackPanel>
             <StackPanel Grid.Row="1"
                         Grid.Column="1">

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace GradeBook.MVVM.ViewModels.Helpers
 {
@@ -51,6 +52,22 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             {
                 sql.CreateTable<Student>();
                 list = sql.Table<Student>().Where(st => st.IdClass == c.Id && st.Name.ToLower().Contains(Filter.ToLower())).ToList();
+            }
+            return list;
+        }
+        public static List<Grade> ReadData(Student student, Teacher teacher)
+        {
+            List<Grade> list = new List<Grade>();
+            if (student == null || teacher == null) return list;
+            using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
+            {
+                sql.CreateTable<TSG>();
+                sql.CreateTable<Grade>();
+                list = (from tsg in sql.Table<TSG>()
+                       where tsg.IdStudent == student.Id && tsg.IdTeacher == teacher.Id
+                       join grade in sql.Table<Grade>()
+                       on tsg.IdGrade equals grade.Id
+                       select grade).ToList();
             }
             return list;
         }

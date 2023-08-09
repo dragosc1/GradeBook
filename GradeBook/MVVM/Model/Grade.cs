@@ -13,7 +13,7 @@ namespace GradeBook.MVVM.Model
     [Table("Grade")]
     public class Grade
     {
-        public Action<string> GradeChanged { get; set; }
+        public Action<string> GradePropertyChanged;
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -24,7 +24,7 @@ namespace GradeBook.MVVM.Model
             get { return _value; }
             set { 
                 _value = value;
-                OnGradeChanged(nameof(Value));
+                OnGradePropertyChanged(nameof(Value));
             }
         }
 
@@ -35,7 +35,7 @@ namespace GradeBook.MVVM.Model
             get { return date; }
             set { 
                 date = value;
-                OnGradeChanged(nameof(Date));
+                OnGradePropertyChanged(nameof(Date));
             }
         }
 
@@ -46,13 +46,14 @@ namespace GradeBook.MVVM.Model
             get { return information; }
             set { 
                 information = value;
-                OnGradeChanged(nameof(Information));
+                OnGradePropertyChanged(nameof(Information));
             }
         }
 
-        private void OnGradeChanged(string v)
+        private void OnGradePropertyChanged(string v)
         {
-            GradeChanged?.Invoke(v);
+            GradePropertyChanged?.Invoke(v);
         }
+
     }
 }

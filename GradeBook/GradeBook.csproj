@@ -105,6 +105,11 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeCommand.cs" />
+    <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeWindow.xaml.cs">
+      <DependentUpon>AddGradeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AccessStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
@@ -150,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
