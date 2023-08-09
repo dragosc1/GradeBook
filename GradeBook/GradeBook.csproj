@@ -110,6 +110,7 @@
       <DependentUpon>AddGradeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\GradeCommands\DeleteGrade\DeleteGradeCommand.cs" />
     <Compile Include="MVVM\ViewModels\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AccessStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
@@ -255,7 +256,6 @@
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\ViewModels\GradeCommands\DeleteGrade\" />
     <Folder Include="MVVM\ViewModels\GradeCommands\UpdateGrade\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

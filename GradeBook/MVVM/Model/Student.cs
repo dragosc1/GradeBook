@@ -34,7 +34,5 @@ namespace GradeBook.MVVM.Model
         {
             StudentPropertyChanged?.Invoke(prop);
         }
-
-        public int Absents { get; set; }
     }
 }
