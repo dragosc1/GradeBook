@@ -39,9 +39,15 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBlock Text="{Binding Value, StringFormat=Grade: {0}}"/>
-                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"/>
-                                <TextBlock Text="{Binding Information}"/>
+                                <TextBlock Text="{Binding Value, StringFormat=Grade: {0}}"
+                                           FontSize="15"
+                                           FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"
+                                           FontSize="15"
+                                           FontStyle="Italic"/>
+                                <TextBlock Text="{Binding Information}"
+                                           FontSize="15"
+                                           Foreground="DarkGreen"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
