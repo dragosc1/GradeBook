@@ -12,14 +12,14 @@ namespace GradeBook.MVVM.Model
         public Action<string> TruancyPropertyChanged;
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        private string information;
+        private DateTime date;
 
-        public string Information
+        public DateTime Date
         {
-            get { return information; }
-            set { 
-                information = value;
-                OnTruancyPropertyChanged(nameof(Information));
+            get { return date; }
+            set {
+                date = value;
+                OnTruancyPropertyChanged(nameof(Date));
             }
         }
 
