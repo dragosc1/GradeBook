@@ -90,6 +90,8 @@
     </ApplicationDefinition>
     <Compile Include="Converters\AddConverter.cs" />
     <Compile Include="Converters\DateToStringConverter.cs" />
+    <Compile Include="MVVM\Model\Truancy.cs" />
+    <Compile Include="MVVM\Model\TST.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindow.xaml.cs">
