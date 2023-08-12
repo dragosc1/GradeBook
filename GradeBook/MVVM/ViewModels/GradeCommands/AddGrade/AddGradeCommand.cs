@@ -24,7 +24,7 @@ namespace GradeBook.MVVM.ViewModels.GradeCommands.AddGrade
             };
             window.ShowDialog();
             Grades.Clear();
-            foreach (Grade grade in DatabaseHelper.ReadData(Student, Teacher))
+            foreach (Grade grade in DatabaseHelper.ReadDataGrades(Student, Teacher))
                 Grades.Add(grade);
         }
         public AddGradeCommand(ObservableCollection<Grade> grades, Student student, Teacher teacher)

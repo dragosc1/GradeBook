@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    [Table("Truancy")]
     public class Truancy
     {
         public Action<string> TruancyPropertyChanged;

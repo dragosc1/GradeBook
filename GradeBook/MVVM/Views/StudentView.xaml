@@ -24,7 +24,7 @@
             <Label Content="{Binding Name}"
                    ContentStringFormat="{DynamicResource profile}"
                    FontSize="30"
-                   Grid.ColumnSpan="2"
+                   Grid.ColumnSpan="3"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"
                    DataContext="{Binding Student}"/>
@@ -84,10 +84,44 @@
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1"
-                        Grid.Column="1">
+                        Grid.Column="1"
+                        Width="275">
                 <Label Content="Truancies"
                        FontSize="20"
                        HorizontalAlignment="Center"/>
+                <ListView x:Name="truancyListView"
+                          ItemsSource="{Binding Truancies}"
+                          Grid.ColumnSpan="3"
+                          MinHeight="30"
+                          MaxHeight="150">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}, UpdateSourceTrigger=PropertyChanged}"
+                                   FontSize="20"
+                                   FontStyle="Italic"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Margin="0 10 0 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Add Truancy"
+                            Grid.Row="1"
+                            FontSize="15"
+                            Height="25"
+                            Width="110"
+                            HorizontalAlignment="Center"
+                            Command="{Binding AddTruancyCommand}"/>
+                    <Button Content="Delete Truancy"
+                            Grid.Column="1"
+                            Width="110"
+                            FontSize="15"
+                            HorizontalAlignment="Center"
+                            Command="{Binding DeleteTruancyCommand}"
+                            CommandParameter="{Binding ElementName=truancyListView, Path=SelectedValue}"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </ScrollViewer>

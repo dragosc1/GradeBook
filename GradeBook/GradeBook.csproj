@@ -136,6 +136,13 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\TruancyCommands\AddTruancy\AddTruancyCommand.cs" />
+    <Compile Include="MVVM\ViewModels\TruancyCommands\AddTruancy\AddTruancyInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\TruancyCommands\AddTruancy\AddTruancyWindow.xaml.cs">
+      <DependentUpon>AddTruancyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\TruancyCommands\AddTruancy\AddTruancyWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\TruancyCommands\DeleteTruancy\DeleteTruancyCommand.cs" />
     <Compile Include="MVVM\Views\StudentView.xaml.cs">
       <DependentUpon>StudentView.xaml</DependentUpon>
     </Compile>
@@ -188,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\ViewModels\StudentCommands\UpdateStudent\UpdateStudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\ViewModels\TruancyCommands\AddTruancy\AddTruancyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -268,7 +279,7 @@
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\ViewModels\TruancyCommands\" />
+    <Folder Include="MVVM\ViewModels\TruancyCommands\UpdateTruancy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />

@@ -32,7 +32,7 @@ namespace GradeBook.MVVM.ViewModels.GradeCommands.UpdateGrade
             };
             window.ShowDialog();
             Grades.Clear();
-            foreach (Grade g in DatabaseHelper.ReadData(Student, Teacher))
+            foreach (Grade g in DatabaseHelper.ReadDataGrades(Student, Teacher))
                 Grades.Add(g);
         }
         public UpdateGradeCommand(ObservableCollection<Grade> grades, Student student, Teacher teacher)

@@ -55,7 +55,7 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
-        public static List<Grade> ReadData(Student student, Teacher teacher)
+        public static List<Grade> ReadDataGrades(Student student, Teacher teacher)
         {
             List<Grade> list = new List<Grade>();
             if (student == null || teacher == null) return list;
@@ -68,6 +68,22 @@ namespace GradeBook.MVVM.ViewModels.Helpers
                        join grade in sql.Table<Grade>()
                        on tsg.IdGrade equals grade.Id
                        select grade).ToList();
+            }
+            return list;
+        }
+        public static List<Truancy> ReadDataTruancies(Student student, Teacher teacher)
+        {
+            List<Truancy> list = new List<Truancy>();
+            if (student == null || teacher == null) return list;
+            using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
+            {
+                sql.CreateTable<TST>();
+                sql.CreateTable<Truancy>();
+                list = (from tst in sql.Table<TST>()
+                        where tst.IdStudent == student.Id && tst.IdTeacher == teacher.Id
+                        join truancy in sql.Table<Truancy>()
+                        on tst.IdTruancy equals truancy.Id
+                        select truancy).ToList();
             }
             return list;
         }

@@ -10,7 +10,7 @@ namespace GradeBook.MVVM.Model
     /// <summary>
     /// Associative table between teacher, student and grade
     /// </summary>
-    [Table("Sudent_Grade")]
+    [Table("TSG")]
     public class TSG
     {
         [PrimaryKey, AutoIncrement]

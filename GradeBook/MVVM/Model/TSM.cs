@@ -10,7 +10,7 @@ namespace GradeBook.MVVM.Model
     /// <summary>
     /// Associative table between teacher, student and misconduct
     /// </summary>
-    [Table("Student_Misconduct")]
+    [Table("TSM")]
     public class TSM
     {
         [PrimaryKey, AutoIncrement]

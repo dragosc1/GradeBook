@@ -27,10 +27,12 @@ namespace GradeBook.MVVM.ViewModels.GradeCommands.DeleteGrade
             using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(DatabaseHelper.connectionString))
             {
                 sql.CreateTable<Grade>();
+                TSG tsg = sql.Table<TSG>().Where(el => el.IdGrade == grade.Id && el.IdTeacher == Teacher.Id && el.IdStudent == Student.Id).ToList().FirstOrDefault();
+                sql.Delete(tsg);
                 sql.Delete(grade);
             }
             Grades.Clear();
-            foreach (Grade g in DatabaseHelper.ReadData(Student, Teacher))
+            foreach (Grade g in DatabaseHelper.ReadDataGrades(Student, Teacher))
                 Grades.Add(g);
         }
         public DeleteGradeCommand(ObservableCollection<Grade> grades, Student student, Teacher teacher) {
