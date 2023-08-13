@@ -106,6 +106,7 @@
       <DependentUpon>UpdateClassWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassWindowViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\Commands\StudentBackCommand.cs" />
     <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeCommand.cs" />
     <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\GradeCommands\AddGrade\AddGradeWindow.xaml.cs">

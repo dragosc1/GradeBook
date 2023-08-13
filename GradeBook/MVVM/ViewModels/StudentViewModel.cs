@@ -1,4 +1,5 @@
 ﻿using GradeBook.MVVM.Model;
+using GradeBook.MVVM.ViewModels.Commands;
 using GradeBook.MVVM.ViewModels.GradeCommands.AddGrade;
 using GradeBook.MVVM.ViewModels.GradeCommands.DeleteGrade;
 using GradeBook.MVVM.ViewModels.GradeCommands.UpdateGrade;
@@ -38,6 +39,8 @@ namespace GradeBook.MVVM.ViewModels
         public UpdateMisconductCommand UpdateMisconductCommand { get; set; }
         public DeleteMisconductCommand DeleteMisconductCommand { get; set; }
 
+        public StudentBackCommand StudentBackCommand { get; set; }
+
         public StudentViewModel(NavigationStore nav, Student student, Teacher teacher)
         {
             NavigationStore = nav;
@@ -66,6 +69,8 @@ namespace GradeBook.MVVM.ViewModels
             AddMisconductCommand = new AddMisconductCommand(Misconducts, Student, Teacher);
             UpdateMisconductCommand = new UpdateMisconductCommand(Misconducts, Student, Teacher);
             DeleteMisconductCommand = new DeleteMisconductCommand(Misconducts, Student, Teacher);
+
+            StudentBackCommand = new StudentBackCommand(NavigationStore, Teacher);
         }
     }
 }
