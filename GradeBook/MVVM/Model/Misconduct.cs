@@ -13,8 +13,34 @@ namespace GradeBook.MVVM.Model
     [Table("Misconduct")]
     public class Misconduct
     {
+        public Action<String> MisconductPropertyChanged;
+
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Information { get; set; }
+
+        private string information;
+        public string Information
+        {
+            get { return information; }
+            set { 
+                information = value;
+                OnMisconductPropertyChanged(nameof(Information));
+            }
+        }
+
+        private DateTime date;
+        public DateTime Date
+        {
+            get { return date; }
+            set { 
+                date = value;
+                OnMisconductPropertyChanged(nameof(Date));
+            }
+        }
+
+        private void OnMisconductPropertyChanged(string prop)
+        {
+            MisconductPropertyChanged?.Invoke(prop);
+        }
     }
 }
