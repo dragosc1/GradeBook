@@ -13,10 +13,10 @@ namespace GradeBook.MVVM.Model
     [Table("Misconduct")]
     public class Misconduct
     {
-        public Action<String> MisconductPropertyChanged;
+        public Action<string> MisconductPropertyChanged;
 
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         private string information;
         public string Information

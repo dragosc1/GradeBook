@@ -87,5 +87,20 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        public static List<Misconduct> ReadDataMisconducts(Student student, Teacher teacher) {
+            List<Misconduct> list = new List<Misconduct>();
+            if (student == null || teacher == null) return list;
+            using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
+            {
+                sql.CreateTable<TSM>();
+                sql.CreateTable<Misconduct>();
+                list = (from tsm in sql.Table<TSM>()
+                        where tsm.IdStudent == student.Id && tsm.IdTeacher == teacher.Id
+                        join misconduct in sql.Table<Misconduct>()
+                        on tsm.IdMisconduct equals misconduct.Id
+                        select misconduct).ToList();
+            }
+            return list;
+        }
     }
 }

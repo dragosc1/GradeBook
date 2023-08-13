@@ -91,7 +91,6 @@
                        HorizontalAlignment="Center"/>
                 <ListView x:Name="truancyListView"
                           ItemsSource="{Binding Truancies}"
-                          Grid.ColumnSpan="3"
                           MinHeight="30"
                           MaxHeight="150">
                     <ListView.ItemTemplate>
@@ -121,6 +120,55 @@
                             HorizontalAlignment="Center"
                             Command="{Binding DeleteTruancyCommand}"
                             CommandParameter="{Binding ElementName=truancyListView, Path=SelectedValue}"/>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Margin="0 10 0 0"
+                        Width="650">
+                <Label Content="Misconducts"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+                <ListView x:Name="misconductListView"
+                          MinHeight="30"
+                          MaxHeight="150"
+                          ItemsSource="{Binding Misconducts}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical"
+                                        Width="635">
+                                <TextBlock Text="{Binding Information}"
+                                           FontSize="17.5"
+                                           FontWeight="Bold"
+                                           TextWrapping="Wrap"
+                                           Margin="0 0 0 2"/>
+                                <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}, UpdateSourceTrigger=PropertyChanged}"
+                                           FontSize="15"
+                                           FontStyle="Italic"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Margin="0 10 0 20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Add Misconduct"
+                            FontSize="15"
+                            Width="150"
+                            Command="{Binding AddMisconductCommand}"/>
+                    <Button Content="Update Misconduct"
+                            FontSize="15"
+                            Width="150"
+                            Grid.Column="1"/>
+                    <Button Content="Delete Misconduct"
+                            FontSize="15"
+                            Width="150"
+                            Grid.Column="2"
+                            Command="{Binding DeleteMisconductCommand}"
+                            CommandParameter="{Binding ElementName=misconductListView, Path=SelectedValue}"/>
                 </Grid>
             </StackPanel>
         </Grid>
