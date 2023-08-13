@@ -5,6 +5,7 @@ using GradeBook.MVVM.ViewModels.GradeCommands.UpdateGrade;
 using GradeBook.MVVM.ViewModels.Helpers;
 using GradeBook.MVVM.ViewModels.MisconductCommands.AddMisconduct;
 using GradeBook.MVVM.ViewModels.MisconductCommands.DeleteMisconduct;
+using GradeBook.MVVM.ViewModels.MisconductCommands.UpdateMisconduct;
 using GradeBook.MVVM.ViewModels.TruancyCommands.AddTruancy;
 using GradeBook.MVVM.ViewModels.TruancyCommands.DeleteTruancy;
 using GradeBook.Store;
@@ -34,6 +35,7 @@ namespace GradeBook.MVVM.ViewModels
 
         public ObservableCollection<Misconduct> Misconducts { get; set; }
         public AddMisconductCommand AddMisconductCommand { get; set; }
+        public UpdateMisconductCommand UpdateMisconductCommand { get; set; }
         public DeleteMisconductCommand DeleteMisconductCommand { get; set; }
 
         public StudentViewModel(NavigationStore nav, Student student, Teacher teacher)
@@ -62,6 +64,7 @@ namespace GradeBook.MVVM.ViewModels
             foreach (Misconduct misconduct in DatabaseHelper.ReadDataMisconducts(Student, Teacher))
                 Misconducts.Add(misconduct);
             AddMisconductCommand = new AddMisconductCommand(Misconducts, Student, Teacher);
+            UpdateMisconductCommand = new UpdateMisconductCommand(Misconducts, Student, Teacher);
             DeleteMisconductCommand = new DeleteMisconductCommand(Misconducts, Student, Teacher);
         }
     }

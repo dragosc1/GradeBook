@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\MisconductCommands\AddMisconduct\AddMisconductWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MisconductCommands\DeleteMisconduct\DeleteMisconductCommand.cs" />
+    <Compile Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\UpdateMisconductCommand.cs" />
+    <Compile Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\UpdateMisconductInfoCommand.cs" />
+    <Compile Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\UpdateMisconductWindow.xaml.cs">
+      <DependentUpon>UpdateMisconductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\UpdateMisconductWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AccessStudentCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentInfoCommand.cs" />
     <Compile Include="MVVM\ViewModels\StudentCommands\AddStudent\AddStudentCommand.cs" />
@@ -198,6 +204,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MVVM\ViewModels\MisconductCommands\AddMisconduct\AddMisconductWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\UpdateMisconductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,7 +300,6 @@
     <Resource Include="Images\Flag_of_the_United_Kingdom.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVVM\ViewModels\MisconductCommands\UpdateMisconduct\" />
     <Folder Include="MVVM\ViewModels\TruancyCommands\UpdateTruancy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
