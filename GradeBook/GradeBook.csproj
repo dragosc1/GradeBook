@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="MVVM\ViewModels\ClassCommands\AddClass\AddClassWindowViewModel.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\ClassChangedCommand.cs" />
+    <Compile Include="MVVM\ViewModels\ClassCommands\ClassSearchTextChangedCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\DeleteClass\DeleteClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassCommand.cs" />
     <Compile Include="MVVM\ViewModels\ClassCommands\UpdateClass\UpdateClassInfoCommand.cs" />

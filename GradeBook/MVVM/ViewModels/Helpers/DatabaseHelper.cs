@@ -33,6 +33,22 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        public static List<Class> ReadData(Teacher t, string filter)
+        {
+            List<Class> list = new List<Class>();
+            if (t == null) return list;
+            using (SQLite.SQLiteConnection sql = new SQLite.SQLiteConnection(connectionString))
+            {
+                sql.CreateTable<Teacher_Class>();
+                sql.CreateTable<Class>();
+                list = (from t_c in sql.Table<Teacher_Class>()
+                        join cl in sql.Table<Class>()
+                        on t_c.IdClass equals cl.Id
+                        where t_c.IdTeacher == t.Id && (cl.Year.ToString() + cl.Name).Contains(filter)
+                        select cl).ToList();
+            }
+            return list;
+        }
         public static List<Student> ReadData(Class c)
         {
             List<Student> list = new List<Student>();

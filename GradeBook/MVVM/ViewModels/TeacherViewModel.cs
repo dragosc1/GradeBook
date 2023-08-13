@@ -37,17 +37,28 @@ namespace GradeBook.MVVM.ViewModels
         public DeleteStudentCommand DeleteStudentCommand { get; set; }
 
         public SearchTextChangedCommand SearchTextChangedCommand { get; set; }
-
+        public ClassSearchTextChangedCommand ClassSearchTextChangedCommand { get; set; }
         public AccessStudentCommand AccessStudentCommand { get; set; }
 
-        private string filter;
+        private string studentFilter;
 
-        public string Filter
+        public string StudentFilter
         {
-            get { return filter; }
+            get { return studentFilter; }
+            set {
+                studentFilter = value;
+                OnPropertyChanged(nameof(StudentFilter));  
+            }
+        }
+
+        private string classFilter;
+
+        public string ClassFilter
+        {
+            get { return classFilter; }
             set { 
-                filter = value;
-                OnPropertyChanged(nameof(Filter));  
+                classFilter = value;
+                OnPropertyChanged(nameof(ClassFilter));
             }
         }
 
@@ -67,8 +78,11 @@ namespace GradeBook.MVVM.ViewModels
             DeleteStudentCommand = new DeleteStudentCommand(Students);
             ClassChangedCommand = new ClassChangedCommand(Students);
 
-            Filter = "";
+            StudentFilter = "";
             SearchTextChangedCommand = new SearchTextChangedCommand(Students);
+
+            ClassFilter = "";
+            ClassSearchTextChangedCommand = new ClassSearchTextChangedCommand(Teacher, Classes);
 
             AccessStudentCommand = new AccessStudentCommand(NavigationStore, Teacher);
         }
