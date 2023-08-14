@@ -7,7 +7,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.GradeCommands.UpdateGrade"
         mc:Ignorable="d"
-        Title="UpdateGradeWindow" Height="300" Width="300">
+        Title="UpdateGradeWindow" Height="300" Width="300"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Window.Resources>
         <c:AddConverter x:Key="conv"/>
     </Window.Resources>
@@ -24,13 +25,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Grade Info"
+        <Label Content="{DynamicResource GradeInfo}"
                FontSize="25"
                FontWeight="Bold"
                Grid.ColumnSpan="2"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
-        <Label Content="Value: "
+        <Label Content="{DynamicResource GradeValue}"
                Grid.Row="2"
                VerticalAlignment="Center"
                FontSize="15"/>
@@ -40,7 +41,7 @@
                  Width="170"
                  Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}"
                  DataContext="{Binding Grade}"/>
-        <Label Content="Date: "
+        <Label Content="{DynamicResource GradeDate}"
                Grid.Row="3"
                VerticalAlignment="Center"
                FontSize="15"/>
@@ -50,7 +51,7 @@
                     Grid.Column="1"
                     SelectedDate="{Binding Date}"
                     DataContext="{Binding Grade}"/>
-        <Label Content="Information: "
+        <Label Content="{DynamicResource GradeInformation}"
                Grid.Row="4"
                VerticalAlignment="Center"
                FontSize="15"/>
@@ -60,7 +61,7 @@
                  Height="20"
                  Text="{Binding Information, UpdateSourceTrigger=PropertyChanged}"
                  DataContext="{Binding Grade}"/>
-        <Button Content="Update Class"
+        <Button Content="{DynamicResource UpdateGradeInformation}"
                 Grid.Row="5"
                 Grid.ColumnSpan="2"
                 Width="100"

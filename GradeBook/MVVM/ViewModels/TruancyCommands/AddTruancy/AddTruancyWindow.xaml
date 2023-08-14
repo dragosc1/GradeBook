@@ -7,7 +7,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.TruancyCommands.AddTruancy"
         mc:Ignorable="d"
-        Title="AddTruancyWindow" Height="200" Width="300">
+        Title="AddTruancyWindow" Height="200" Width="300"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Window.Resources>
         <c:AddConverter x:Key="conv"/>
     </Window.Resources>
@@ -21,13 +22,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Truancy Info"
+        <Label Content="{DynamicResource TruancyInfo}"
                Grid.ColumnSpan="2"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                FontSize="25"
                FontWeight="Bold"/>
-        <Label Content="Date: "
+        <Label Content="{DynamicResource TruancyDate}"
                Grid.Row="1"
                VerticalAlignment="Center"
                FontSize="20"
@@ -38,7 +39,7 @@
             Grid.Column="1"
             SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}"
             DataContext="{Binding Truancy}"/>
-        <Button Content="Add Truancy"
+        <Button Content="{DynamicResource AddTruancyInformation}"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
                 Width="100"

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:GradeBook.MVVM.Views"
              xmlns:c="clr-namespace:GradeBook.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <UserControl.Resources>
         <c:DateToStringConverter x:Key="dateConverter"/>
     </UserControl.Resources>
@@ -21,8 +22,8 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Content="Back"
-                    Width="50"
+            <Button Content="{DynamicResource Back}"
+                    Width="60"
                     Height="30"
                     FontWeight="BOLD"
                     FontSize="15"
@@ -38,7 +39,7 @@
                    HorizontalAlignment="Center"
                    DataContext="{Binding Student}"/>
             <StackPanel Grid.Row="1">
-                <Label Content="Grades"
+                <Label Content="{DynamicResource Grades}"
                        FontSize="20"
                        HorizontalAlignment="Center"/>
                 <ListView ItemsSource="{Binding Grades}"
@@ -48,9 +49,11 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <TextBlock Text="{Binding Value, StringFormat=Grade: {0}}"
-                                           FontSize="15"
-                                           FontWeight="Bold"/>
+                                <Label Content="{Binding Value}"
+                                       ContentStringFormat="{DynamicResource GradeFormat}"
+                                       Padding="2 0 0 0"
+                                       FontSize="15"
+                                       FontWeight="Bold"/>
                                 <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"
                                            FontSize="15"
                                            FontStyle="Italic"/>
@@ -67,14 +70,14 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add Grade"
+                    <Button Content="{DynamicResource AddGrade}"
                         Width="110"
                         FontSize="15"
                         Height="25"
                         Margin="0 10 0 10"
                         HorizontalAlignment="Center"
                         Command="{Binding AddGradeCommand}"/>
-                    <Button Content="Update Grade"
+                    <Button Content="{DynamicResource UpdateGrade}"
                             Grid.Column="1"
                             Height="25"
                             FontSize="15"
@@ -82,7 +85,7 @@
                             Margin="0 10 0 10"
                             Command="{Binding UpdateGradeCommand}"
                             CommandParameter="{Binding Path=SelectedValue, ElementName=gradeListView}"/>
-                    <Button Content="Delete Grade"
+                    <Button Content="{DynamicResource DeleteGrade}"
                             Grid.Column="2"
                             Width="110"
                             Height="25"
@@ -95,7 +98,7 @@
             <StackPanel Grid.Row="1"
                         Grid.Column="1"
                         Width="275">
-                <Label Content="Truancies"
+                <Label Content="{DynamicResource Truancies}"
                        FontSize="20"
                        HorizontalAlignment="Center"/>
                 <ListView x:Name="truancyListView"
@@ -115,16 +118,16 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add Truancy"
+                    <Button Content="{DynamicResource AddTruancy}"
                             Grid.Row="1"
                             FontSize="15"
                             Height="25"
-                            Width="110"
+                            Width="120"
                             HorizontalAlignment="Center"
                             Command="{Binding AddTruancyCommand}"/>
-                    <Button Content="Delete Truancy"
+                    <Button Content="{DynamicResource DeleteTruancy}"
                             Grid.Column="1"
-                            Width="110"
+                            Width="120"
                             FontSize="15"
                             HorizontalAlignment="Center"
                             Command="{Binding DeleteTruancyCommand}"
@@ -135,7 +138,7 @@
                         Grid.ColumnSpan="2"
                         Margin="0 10 0 0"
                         Width="650">
-                <Label Content="Misconducts"
+                <Label Content="{DynamicResource Misconducts}"
                        HorizontalAlignment="Center"
                        FontSize="20"/>
                 <ListView x:Name="misconductListView"
@@ -165,17 +168,17 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add Misconduct"
+                    <Button Content="{DynamicResource AddMisconduct}"
                             FontSize="15"
                             Width="150"
                             Command="{Binding AddMisconductCommand}"/>
-                    <Button Content="Update Misconduct"
+                    <Button Content="{DynamicResource UpdateMisconduct}"
                             FontSize="15"
                             Width="150"
                             Grid.Column="1"
                             Command="{Binding UpdateMisconductCommand}"
                             CommandParameter="{Binding ElementName=misconductListView, Path=SelectedValue}"/>
-                    <Button Content="Delete Misconduct"
+                    <Button Content="{DynamicResource DeleteMisconduct}"
                             FontSize="15"
                             Width="150"
                             Grid.Column="2"

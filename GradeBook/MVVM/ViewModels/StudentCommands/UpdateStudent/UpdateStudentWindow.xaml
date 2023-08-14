@@ -7,7 +7,8 @@
         xmlns:conv="clr-namespace:GradeBook.Converters"
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.StudentCommands.UpdateStudent"
         mc:Ignorable="d"
-        Title="AddStudentWindow" Height="175" Width="300">
+        Title="AddStudentWindow" Height="175" Width="300"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Window.Resources>
         <conv:AddConverter x:Key="conv"/>
     </Window.Resources>
@@ -21,13 +22,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Student Information"
+        <TextBlock Text="{DynamicResource StudentInformation}"
                  Grid.ColumnSpan="2"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  FontSize="20"
                  FontWeight="Bold"/>
-        <TextBlock Text="Name:"
+        <TextBlock Text="{DynamicResource NameStudent}"
                    Grid.Row="1"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -38,10 +39,10 @@
                  Margin="0 0 10 0"
                  DataContext="{Binding SelectedStudent}"
                  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Content="Update"
+        <Button Content="{DynamicResource UpdateStudentInformation}"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
-                Width="50"
+                Width="60"
                 Height="30"
                 Command="{Binding UpdateStudentInfoCommand}">
             <Button.CommandParameter>

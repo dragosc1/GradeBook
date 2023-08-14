@@ -9,7 +9,8 @@
         mc:Ignorable="d"
         Title="Add Class" Height="300" Width="300"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Window.Resources>
         <conv:AddConverter x:Key="conv"/>
     </Window.Resources>
@@ -25,18 +26,18 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Class Information"
+        <TextBlock Text="{DynamicResource ClassInformation}"
                  Grid.ColumnSpan="2"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  FontSize="20"
                  FontWeight="Bold"/>
-        <TextBlock Text="Name:"
+        <TextBlock Text="{DynamicResource NameClass}"
                    Grid.Row="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="15"/>
-        <TextBlock Text="Year:"
+        <TextBlock Text="{DynamicResource YearClass}"
                    Grid.Row="3"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
@@ -53,7 +54,7 @@
                  Margin="0 0 10 0"
                  DataContext="{Binding Class}"
                  Text="{Binding Year, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Content="Add"
+        <Button Content="{DynamicResource AddClassInfo}"
                 Grid.Row="4"
                 Grid.ColumnSpan="2"
                 Width="50"

@@ -6,7 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.MisconductCommands.AddMisconduct"
         mc:Ignorable="d"
-        Title="AddMisconductWindow" Height="300" Width="300">
+        Title="AddMisconductWindow" Height="300" Width="300"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Grid Width="250">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -18,13 +19,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Misconduct Info"
+        <Label Content="{DynamicResource MisconductInfo}"
                Grid.ColumnSpan="2"
                FontSize="25"
                FontWeight="Bold"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>
-        <Label Content="Information: "
+        <Label Content="{DynamicResource MisconductInformation}"
                Grid.Row="1"
                VerticalAlignment="Center"
                FontSize="16.5"/>
@@ -35,7 +36,7 @@
                  FontSize="15"
                  Text="{Binding Information, UpdateSourceTrigger=PropertyChanged}"
                  DataContext="{Binding Misconduct}"/>
-        <Label Content="Date: "
+        <Label Content="{DynamicResource MisconductDate}"
                Grid.Row="2"
                VerticalAlignment="Center"
                FontSize="16.5"
@@ -46,7 +47,7 @@
                  Grid.Row="2"
                  SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}"
                  DataContext="{Binding Misconduct}"/>
-        <Button Content="Add Misconduct"
+        <Button Content="{DynamicResource AddMisconductInformation}"
                 Grid.Row="3"
                 Grid.ColumnSpan="2"
                 Width="100"

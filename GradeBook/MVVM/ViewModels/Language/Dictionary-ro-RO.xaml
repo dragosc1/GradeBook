@@ -2,24 +2,60 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:System="clr-namespace:System;assembly=mscorlib">
 
-    <System:String x:Key="Greeting">Buna ziua!</System:String>
-    <System:String x:Key="Greeting2">Buna {0}!</System:String>
+    <System:String x:Key="Greeting">Bună ziua!</System:String>
+    <System:String x:Key="Greeting2">Bună {0}!</System:String>
     <System:String x:Key="login">Autentificare</System:String>
-    <System:String x:Key="password">Parola:</System:String>
+    <System:String x:Key="password">Parolă:</System:String>
     <System:String x:Key="yourname">Nume:</System:String>
     <System:String x:Key="profile">Profil {0}!</System:String>
     <System:String x:Key="LOGIN">LOGARE</System:String>
-    <System:String x:Key="REGISTER">INREGISTRARE</System:String>
-    <System:String x:Key="SelectClass">Selecteaza Clasa</System:String>
-    <System:String x:Key="Search" xml:space="preserve">Cauta:   </System:String>
-    <System:String x:Key="AddClass">Adauga Clasa</System:String>
-    <System:String x:Key="UpdateClass">Actualizeaza Clasa</System:String>
-    <System:String x:Key="DeleteClass">Sterge Clasa</System:String>
-    <System:String x:Key="SelectStudent">Selecteaza Elevul</System:String>
-    <System:String x:Key="AddStudent">Adauga Elevul</System:String>
-    <System:String x:Key="UpdateStudent">Actualizeaza Elevul</System:String>
-    <System:String x:Key="DeleteStudent">Sterge elevul</System:String>
+    <System:String x:Key="REGISTER">ÎNREGISTRARE</System:String>
+    <System:String x:Key="SelectClass">Selectează Clasa</System:String>
+    <System:String x:Key="Search" xml:space="preserve">Caută:   </System:String>
+    <System:String x:Key="AddClass">Adaugă Clasă</System:String>
+    <System:String x:Key="UpdateClass">Modifică Clasă</System:String>
+    <System:String x:Key="DeleteClass">Şterge Clasă</System:String>
+    <System:String x:Key="SelectStudent">Selectează Elevul</System:String>
+    <System:String x:Key="AddStudent">Adaugă Elev</System:String>
+    <System:String x:Key="UpdateStudent">Modifică Elev</System:String>
+    <System:String x:Key="DeleteStudent">Şterge Elev</System:String>
     <System:String x:Key="Student" xml:space="preserve">Elev: </System:String>
-    <System:String x:Key="AccessStudent">Acceseaza Elevul</System:String>
+    <System:String x:Key="AccessStudent">Accesează Elevul</System:String>
     <System:String x:Key="Class" xml:space="preserve">Clasa: </System:String>
+    <System:String x:Key="Grades">Note</System:String>
+    <System:String x:Key="Back">Înapoi</System:String>
+    <System:String x:Key="Truancies">Absenţe</System:String>
+    <System:String x:Key="GradeFormat">Notă: {0}</System:String>
+    <System:String x:Key="AddGrade">Adaugă Notă</System:String>
+    <System:String x:Key="UpdateGrade">Modifică Notă</System:String>
+    <System:String x:Key="DeleteGrade">Şterge Notă</System:String>
+    <System:String x:Key="AddTruancy">Adaugă Absenţă</System:String>
+    <System:String x:Key="DeleteTruancy">Şterge Absenţă</System:String>
+    <System:String x:Key="Misconducts">Abateri</System:String>
+    <System:String x:Key="AddMisconduct">Adaugă Abatere</System:String>
+    <System:String x:Key="UpdateMisconduct">Modifică Abatere</System:String>
+    <System:String x:Key="DeleteMisconduct">Şterge Abatere</System:String>
+    <System:String x:Key="ClassInformation">Informaţii Clasă</System:String>
+    <System:String x:Key="NameClass">Nume:</System:String>
+    <System:String x:Key="AddClassInfo">Adaugă</System:String>
+    <System:String x:Key="YearClass">An:</System:String>
+    <System:String x:Key="UpdateClassInfo">Modifică</System:String>
+    <System:String x:Key="StudentInformation">Informaţii Elev</System:String>
+    <System:String x:Key="AddStudentInformation">Adaugă</System:String>
+    <System:String x:Key="NameStudent">Nume:</System:String>
+    <System:String x:Key="UpdateStudentInformation">Modifică</System:String>
+    <System:String x:Key="GradeInfo">Informaţii Notă</System:String>
+    <System:String x:Key="GradeValue" xml:space="preserve">Valoare: </System:String>
+    <System:String x:Key="GradeDate" xml:space="preserve">Dată: </System:String>
+    <System:String x:Key="GradeInformation" xml:space="preserve">Informaţii: </System:String>
+    <System:String x:Key="AddGradeInformation">Adaugă Notă</System:String>
+    <System:String x:Key="UpdateGradeInformation">Modifică Clasă</System:String>
+    <System:String x:Key="MisconductInfo">Informaţii Abatere</System:String>
+    <System:String x:Key="MisconductInformation" xml:space="preserve">Informaţii: </System:String>
+    <System:String x:Key="MisconductDate" xml:space="preserve">Dată: </System:String>
+    <System:String x:Key="AddMisconductInformation">Adaugă Abatere</System:String>
+    <System:String x:Key="UpdateMisconductInformation">Modifică Abatere</System:String>
+    <System:String x:Key="TruancyInfo">Informaţii Absenţă</System:String>
+    <System:String x:Key="TruancyDate" xml:space="preserve">Dată: </System:String>
+    <System:String x:Key="AddTruancyInformation">Adaugă Absenţă</System:String>
 </ResourceDictionary>

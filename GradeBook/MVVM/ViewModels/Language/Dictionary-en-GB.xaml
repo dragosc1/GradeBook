@@ -15,11 +15,47 @@
     <System:String x:Key="AddClass">Add Class</System:String>
     <System:String x:Key="UpdateClass">Update Class</System:String>
     <System:String x:Key="DeleteClass">Delete Class</System:String>
+    <System:String x:Key="StudentInformation">Student Information</System:String>
     <System:String x:Key="SelectStudent">Select Student</System:String>
     <System:String x:Key="AddStudent">Add Student</System:String>
+    <System:String x:Key="NameStudent">Name:</System:String>
     <System:String x:Key="UpdateStudent">Update Student</System:String>
     <System:String x:Key="DeleteStudent">Delete Student</System:String>
     <System:String x:Key="Student" xml:space="preserve">Student: </System:String>
     <System:String x:Key="AccessStudent">Access Student</System:String>
     <System:String x:Key="Class" xml:space="preserve">Class: </System:String>
+    <System:String x:Key="Grades">Grades</System:String>
+    <System:String x:Key="AddStudentInformation">Add</System:String>
+    <System:String x:Key="Back">Back</System:String>
+    <System:String x:Key="Truancies">Truancies</System:String>
+    <System:String x:Key="YearClass">Year:</System:String>
+    <System:String x:Key="GradeFormat">Grade: {0}</System:String>
+    <System:String x:Key="AddGrade">Add Grade</System:String>
+    <System:String x:Key="UpdateGrade">Update Grade</System:String>
+    <System:String x:Key="DeleteGrade">Delete Grade</System:String>
+    <System:String x:Key="AddTruancy">Add Truancy</System:String>
+    <System:String x:Key="DeleteTruancy">Delete Truancy</System:String>
+    <System:String x:Key="Misconducts">Misconducts</System:String>
+    <System:String x:Key="AddMisconduct">Add Misconduct</System:String>
+    <System:String x:Key="UpdateClassInfo">Update</System:String>
+    <System:String x:Key="UpdateMisconduct">Update Misconduct</System:String>
+    <System:String x:Key="AddClassInfo">Add</System:String>
+    <System:String x:Key="DeleteMisconduct">Delete Misconduct</System:String>
+    <System:String x:Key="ClassInformation">Class Information</System:String>
+    <System:String x:Key="NameClass">Name:</System:String>
+    <System:String x:Key="UpdateStudentInformation">Update</System:String>
+    <System:String x:Key="GradeInfo">Grade Info</System:String>
+    <System:String x:Key="GradeValue" xml:space="preserve">Value: </System:String>
+    <System:String x:Key="GradeDate" xml:space="preserve">Date: </System:String>
+    <System:String x:Key="GradeInformation" xml:space="preserve">Information: </System:String>
+    <System:String x:Key="AddGradeInformation">Add Class</System:String>
+    <System:String x:Key="UpdateGradeInformation">Update Class</System:String>
+    <System:String x:Key="MisconductInfo">Misconduct Info</System:String>
+    <System:String x:Key="MisconductInformation" xml:space="preserve">Information: </System:String>
+    <System:String x:Key="MisconductDate" xml:space="preserve">Date: </System:String>
+    <System:String x:Key="AddMisconductInformation">Add Misconduct</System:String>
+    <System:String x:Key="UpdateMisconductInformation">Update Misconduct</System:String>
+    <System:String x:Key="TruancyInfo">Truancy Info</System:String>
+    <System:String x:Key="TruancyDate" xml:space="preserve">Date: </System:String>
+    <System:String x:Key="AddTruancyInformation">Add Truancy</System:String>
 </ResourceDictionary>
