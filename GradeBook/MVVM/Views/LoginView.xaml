@@ -66,8 +66,9 @@
                        VerticalAlignment="Center"/>
                 <TextBox Grid.Row="1"
                          Grid.Column="1"
-                         Height="20"
+                         Height="25"
                          Width="300"
+                         FontSize="15"
                          DataContext="{Binding Teacher}"
                          Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="{DynamicResource password}"
@@ -77,8 +78,9 @@
                        VerticalAlignment="Center"/>
                 <components:BindablePasswordBox Grid.Row="2"
                              Grid.Column="1"
-                             Height="20"
+                             Height="25"
                              Width="300"
+                             FontSize="15"                   
                              Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              DataContext="{Binding Teacher}"/>
             </Grid>
@@ -87,7 +89,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="REGISTER"
+                <Button Content="{DynamicResource REGISTER}"
                     Height="30"
                     Width="100"
                     FontWeight="Bold"
@@ -96,7 +98,7 @@
                     Command="{Binding RegisterCommand}"
                     CommandParameter="{Binding Teacher}">
                 </Button>
-                <Button Content="LOGIN"
+                <Button Content="{DynamicResource LOGIN}"
                     Grid.Column="1"
                     Height="30"
                     Width="100"

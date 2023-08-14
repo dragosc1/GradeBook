@@ -8,4 +8,6 @@
     <System:String x:Key="password">Password:</System:String>
     <System:String x:Key="yourname">Name:</System:String>
     <System:String x:Key="profile">Profile {0}!</System:String>
+    <System:String x:Key="LOGIN">LOGIN</System:String>
+    <System:String x:Key="REGISTER">REGISTER</System:String>
 </ResourceDictionary>
