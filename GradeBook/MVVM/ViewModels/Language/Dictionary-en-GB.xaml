@@ -10,4 +10,16 @@
     <System:String x:Key="profile">Profile {0}!</System:String>
     <System:String x:Key="LOGIN">LOGIN</System:String>
     <System:String x:Key="REGISTER">REGISTER</System:String>
+    <System:String x:Key="SelectClass">Select Class</System:String>
+    <System:String x:Key="Search" xml:space="preserve">Search:   </System:String>
+    <System:String x:Key="AddClass">Add Class</System:String>
+    <System:String x:Key="UpdateClass">Update Class</System:String>
+    <System:String x:Key="DeleteClass">Delete Class</System:String>
+    <System:String x:Key="SelectStudent">Select Student</System:String>
+    <System:String x:Key="AddStudent">Add Student</System:String>
+    <System:String x:Key="UpdateStudent">Update Student</System:String>
+    <System:String x:Key="DeleteStudent">Delete Student</System:String>
+    <System:String x:Key="Student" xml:space="preserve">Student: </System:String>
+    <System:String x:Key="AccessStudent">Access Student</System:String>
+    <System:String x:Key="Class" xml:space="preserve">Class: </System:String>
 </ResourceDictionary>

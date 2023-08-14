@@ -7,7 +7,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GradeBook.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
     <UserControl.Resources>
         <conv:AddConverter x:Key="conv"/>
     </UserControl.Resources>
@@ -20,7 +21,7 @@
                    HorizontalAlignment="Center"
                    FontSize="30"
                    FontWeight="Bold"/>
-                <Label Content="Select Class"
+                <Label Content="{DynamicResource SelectClass}"
                        Margin="0 20 0 5"
                        HorizontalAlignment="Center"
                        FontSize="20"/>
@@ -30,7 +31,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Search:   "
+                    <TextBlock Text="{DynamicResource Search}"
                                FontSize="17.5"/>
                     <TextBox Grid.Column="1"
                              FontSize="17.5"
@@ -58,7 +59,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" 
                                         Margin="1 2 1 2">
-                                <TextBlock Text="Class: "
+                                <TextBlock Text="{DynamicResource Class}"
                                            FontSize="20"
                                            Foreground="DarkRed"
                                            FontWeight="Bold"/>
@@ -79,13 +80,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button Command="{Binding AddClassCommand}"
-                            Content="Add Class"
-                            Width="100"
+                            Content="{DynamicResource AddClass}"
+                            Width="150"
                             FontSize="15"
                             FontWeight="Bold"/>
                     <Button Command="{Binding UpdateClassCommand}"
-                            Content="Update Class"
-                            Width="100"
+                            Content="{DynamicResource UpdateClass}"
+                            Width="150"
+                            Height="25"
                             FontSize="15"
                             Grid.Column="1"
                             FontWeight="Bold">
@@ -94,8 +96,8 @@
                         </Button.CommandParameter>
                     </Button>
                     <Button Command="{Binding DeleteClassCommand}"
-                            Content="Delete Class"
-                            Width="100"
+                            Content="{DynamicResource DeleteClass}"
+                            Width="150"
                             FontSize="15"
                             Grid.Column="2"
                             FontWeight="Bold">
@@ -104,7 +106,7 @@
                         </Button.CommandParameter>
                     </Button>
                 </Grid>
-                <TextBlock Text="Select Student"
+                <TextBlock Text="{DynamicResource SelectStudent}"
                            HorizontalAlignment="Center"
                            FontSize="20"
                            Margin="0 0 0 10"/>
@@ -114,7 +116,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Search:   "
+                    <TextBlock Text="{DynamicResource Search}"
                                FontSize="17.5"/>
                     <TextBox Grid.Column="1"
                              FontSize="17.5"
@@ -145,7 +147,7 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Student: "
+                                <TextBlock Text="{DynamicResource Student}"
                                            Foreground="DarkRed"
                                            FontSize="20"
                                            FontWeight="Bold"/>
@@ -163,19 +165,20 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add Student"
+                    <Button Content="{DynamicResource AddStudent}"
                         Command="{Binding AddStudentCommand}"
-                        Width="100"
+                        Width="150"
                         FontSize="15"
                         FontWeight="Bold">
                         <Button.CommandParameter>
                             <Binding ElementName="classListView" Path="SelectedValue"/>
                         </Button.CommandParameter>
                     </Button>
-                    <Button Content="Update Student"
+                    <Button Content="{DynamicResource UpdateStudent}"
                             Grid.Column="1"
-                            Width="120"
+                            Width="150"
                             FontSize="15"
+                            Height="25"
                             FontWeight="Bold"
                             Command="{Binding UpdateStudentCommand}">
                         <Button.CommandParameter>
@@ -186,8 +189,8 @@
                         </Button.CommandParameter>
                     </Button>
                     <Button Grid.Column="2"
-                            Width="120"
-                            Content="Delete Student"
+                            Width="150"
+                            Content="{DynamicResource DeleteStudent}"
                             FontSize="15"
                             FontWeight="Bold"
                             Command="{Binding DeleteStudentCommand}">
@@ -199,8 +202,8 @@
                         </Button.CommandParameter>
                     </Button>
                 </Grid>
-                <Button Content="Acces Student"
-                        Width="120"
+                <Button Content="{DynamicResource AccessStudent}"
+                        Width="150"
                         FontSize="15"
                         FontWeight="Bold"
                         Background="LightGreen"

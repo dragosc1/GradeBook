@@ -10,4 +10,16 @@
     <System:String x:Key="profile">Profil {0}!</System:String>
     <System:String x:Key="LOGIN">LOGARE</System:String>
     <System:String x:Key="REGISTER">INREGISTRARE</System:String>
+    <System:String x:Key="SelectClass">Selecteaza Clasa</System:String>
+    <System:String x:Key="Search" xml:space="preserve">Cauta:   </System:String>
+    <System:String x:Key="AddClass">Adauga Clasa</System:String>
+    <System:String x:Key="UpdateClass">Actualizeaza Clasa</System:String>
+    <System:String x:Key="DeleteClass">Sterge Clasa</System:String>
+    <System:String x:Key="SelectStudent">Selecteaza Elevul</System:String>
+    <System:String x:Key="AddStudent">Adauga Elevul</System:String>
+    <System:String x:Key="UpdateStudent">Actualizeaza Elevul</System:String>
+    <System:String x:Key="DeleteStudent">Sterge elevul</System:String>
+    <System:String x:Key="Student" xml:space="preserve">Elev: </System:String>
+    <System:String x:Key="AccessStudent">Acceseaza Elevul</System:String>
+    <System:String x:Key="Class" xml:space="preserve">Clasa: </System:String>
 </ResourceDictionary>
