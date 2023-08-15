@@ -8,6 +8,9 @@ using System.Windows.Data;
 
 namespace GradeBook.Converters
 {
+    /// <summary>
+    /// This is the base converter
+    /// </summary>
     public class AddConverter : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)

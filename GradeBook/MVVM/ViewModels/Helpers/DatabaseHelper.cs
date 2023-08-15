@@ -17,6 +17,15 @@ namespace GradeBook.MVVM.ViewModels.Helpers
         static string myDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         static string dataBaseName = "GradeBook.db";
         public static string connectionString = Path.Combine(myDocumentsPath, dataBaseName);
+        /// <summary>
+        /// This function reads the list of classes the teacher is teaching at 
+        /// </summary>
+        /// <param name="t">
+        /// Parameter is a Teacher object
+        /// </param>
+        /// <returns>
+        /// Returns list of classes
+        /// </returns>
         public static List<Class> ReadData(Teacher t)
         {
             List<Class> list = new List<Class>();
@@ -33,6 +42,18 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// This function reads the list of classes the teacher is teaching at based on a filter
+        /// </summary>
+        /// <param name="t">
+        /// Parameter is a Teacher object
+        /// </param>
+        /// <param name="filter">
+        /// Parameter is a filter that is applied on the resulting list of classes
+        /// </param>
+        /// <returns>
+        /// Returns list of classes based on filter
+        /// </returns>
         public static List<Class> ReadData(Teacher t, string filter)
         {
             List<Class> list = new List<Class>();

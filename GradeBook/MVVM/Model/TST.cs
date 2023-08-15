@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.Model
 {
+    /// <summary>
+    /// Associative table between teacher, student and truancy
+    /// </summary>
+    [Table("TST")]
     public class TST
     {
         [PrimaryKey, AutoIncrement]

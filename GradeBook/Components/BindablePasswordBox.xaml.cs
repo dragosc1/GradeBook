@@ -20,8 +20,6 @@ namespace GradeBook.Components
     /// </summary>
     public partial class BindablePasswordBox : UserControl
     {
-
-
         public string Password
         {
             get { return (string)GetValue(PasswordProperty); }

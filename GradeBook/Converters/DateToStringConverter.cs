@@ -8,6 +8,9 @@ using System.Windows.Data;
 
 namespace GradeBook.Converters
 {
+    /// <summary>
+    /// Date to string converter (converts by culture en-GB / ro-RO)
+    /// </summary>
     public class DateToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
