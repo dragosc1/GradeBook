@@ -41,7 +41,9 @@ namespace GradeBook.MVVM.ViewModels.Commands
                 {
                     NavigationStore.CurrentViewModel = new TeacherViewModel(NavigationStore, result[0]);
                 }
-                else MessageBox.Show("Invalid Login", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                else if (Properties.Settings.Default.language == "en-GB")
+                    MessageBox.Show("Invalid Login", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                else MessageBox.Show("Logare invalidă", "Eroare", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
