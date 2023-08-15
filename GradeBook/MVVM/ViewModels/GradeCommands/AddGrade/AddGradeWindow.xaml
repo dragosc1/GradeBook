@@ -7,6 +7,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.GradeCommands.AddGrade"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="AddGradeWindow" Height="300" Width="300"
     xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Window.Resources>

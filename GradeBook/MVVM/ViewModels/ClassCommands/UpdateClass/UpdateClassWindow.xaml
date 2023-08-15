@@ -7,6 +7,8 @@
         xmlns:local="clr-namespace:GradeBook.MVVM.ViewModels.ClassCommands.UpdateClass"
         xmlns:conv="clr-namespace:GradeBook.Converters"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         Title="UpdateClassWindow" Height="300" Width="300">
     <Window.Resources>
         <conv:AddConverter x:Key="conv"/>
