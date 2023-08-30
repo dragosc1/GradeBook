@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.ViewModels
 {
+    /// <summary>
+    /// MainWindow View Model
+    /// </summary>
     public class MainViewModel : ViewModelBase
     {
         public NavigationStore NavigationStore { get; }

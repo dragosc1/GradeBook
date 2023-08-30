@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 
 namespace GradeBook.MVVM.ViewModels
 {
+    /// <summary>
+    /// Student View Model
+    /// </summary>
     public class StudentViewModel : ViewModelBase
     {
         public NavigationStore NavigationStore { get; set; }

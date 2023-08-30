@@ -19,6 +19,9 @@ using System.Windows;
 
 namespace GradeBook.MVVM.ViewModels
 {
+    /// <summary>
+    /// Teacher View Model
+    /// </summary>
     public class TeacherViewModel : ViewModelBase
     {
         public Teacher Teacher { get; set; }

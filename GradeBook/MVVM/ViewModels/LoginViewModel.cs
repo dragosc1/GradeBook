@@ -15,6 +15,9 @@ using System.Windows;
 
 namespace GradeBook.MVVM.ViewModels
 {
+    /// <summary>
+    /// Login View Model
+    /// </summary>
     public class LoginViewModel : ViewModelBase
     {
         public LanguageViewModel LanguageViewModel { get; set; }
