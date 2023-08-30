@@ -7,8 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GradeBook.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-    xmlns:System="clr-namespace:System;assembly=mscorlib">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <conv:AddConverter x:Key="conv"/>
     </UserControl.Resources>

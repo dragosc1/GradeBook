@@ -9,7 +9,8 @@
         mc:Ignorable="d"
         Title="GradeBook" Height="500" Width="800"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="favicon (1).ico">
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type vm:LoginViewModel}">
