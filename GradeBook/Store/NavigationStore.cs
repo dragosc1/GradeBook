@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GradeBook.Store
 {
+    /// <summary>
+    /// Main navigation store for all windows / user controls
+    /// </summary>
     public class NavigationStore
     {
         public event Action NavigationChanged;

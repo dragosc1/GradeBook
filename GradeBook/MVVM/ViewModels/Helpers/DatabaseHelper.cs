@@ -70,6 +70,11 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// This function reads all students based on a class
+        /// </summary>
+        /// <param name="c">A class</param>
+        /// <returns>List of all students from the class</returns>
         public static List<Student> ReadData(Class c)
         {
             List<Student> list = new List<Student>();
@@ -81,6 +86,12 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// This function reads all students based on a class and a filter (string that a student must contain)
+        /// </summary>
+        /// <param name="c">A class</param>
+        /// <param name="Filter">string that the student should contain</param>
+        /// <returns>List of students from that class. The students must contain the filter</returns>
         public static List<Student> ReadData(Class c, string Filter)
         {
             List<Student> list = new List<Student>();
@@ -92,6 +103,12 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// Function that reads all grades from a student based on teacher's subject
+        /// </summary>
+        /// <param name="student">The student</param>
+        /// <param name="teacher">The teacher</param>
+        /// <returns>List of grades</returns>
         public static List<Grade> ReadDataGrades(Student student, Teacher teacher)
         {
             List<Grade> list = new List<Grade>();
@@ -108,6 +125,12 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// This function reads the truancies done by a student
+        /// </summary>
+        /// <param name="student">The student</param>
+        /// <param name="teacher">The teacher</param>
+        /// <returns>List of truancies</returns>
         public static List<Truancy> ReadDataTruancies(Student student, Teacher teacher)
         {
             List<Truancy> list = new List<Truancy>();
@@ -124,6 +147,12 @@ namespace GradeBook.MVVM.ViewModels.Helpers
             }
             return list;
         }
+        /// <summary>
+        /// This function reads the misconducts done by a student in a teacher's course
+        /// </summary>
+        /// <param name="student">The student</param>
+        /// <param name="teacher">The teacher</param>
+        /// <returns>The list of Misconducts</returns>
         public static List<Misconduct> ReadDataMisconducts(Student student, Teacher teacher) {
             List<Misconduct> list = new List<Misconduct>();
             if (student == null || teacher == null) return list;
