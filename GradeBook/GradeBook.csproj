@@ -308,8 +308,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bin\Debug\GradeBook.exe.config" />
-    <None Include="bin\Release\GradeBook.exe.config" />
+    <None Include="Application\Release\GradeBook.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -339,30 +338,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\GradeBook.exe" />
-    <Content Include="bin\Debug\GradeBook.pdb" />
-    <Content Include="bin\Debug\Microsoft.Xaml.Behaviors.dll" />
-    <Content Include="bin\Debug\Microsoft.Xaml.Behaviors.pdb" />
-    <Resource Include="bin\Debug\Microsoft.Xaml.Behaviors.xml" />
-    <Content Include="bin\Debug\runtimes\win-arm\native\e_sqlite3.dll" />
-    <Content Include="bin\Debug\runtimes\win-x64\native\e_sqlite3.dll" />
-    <Content Include="bin\Debug\runtimes\win-x86\native\e_sqlite3.dll" />
-    <Content Include="bin\Debug\SQLite-net.dll" />
-    <Resource Include="bin\Debug\SQLite-net.xml" />
-    <Content Include="bin\Debug\SQLitePCLRaw.batteries_v2.dll" />
-    <Content Include="bin\Debug\SQLitePCLRaw.core.dll" />
-    <Content Include="bin\Debug\SQLitePCLRaw.nativelibrary.dll" />
-    <Content Include="bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll" />
-    <Content Include="bin\Debug\System.Buffers.dll" />
-    <Resource Include="bin\Debug\System.Buffers.xml" />
-    <Content Include="bin\Debug\System.Memory.dll" />
-    <Resource Include="bin\Debug\System.Memory.xml" />
-    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
-    <Resource Include="bin\Debug\System.Numerics.Vectors.xml" />
-    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Resource Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="bin\Release\GradeBook.exe" />
-    <Content Include="bin\Release\GradeBook.pdb" />
+    <Content Include="Application\Release\GradeBook.exe" />
+    <Content Include="Application\Release\GradeBook.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
